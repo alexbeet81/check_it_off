@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
-    before_action :set_category, only: [:create]
-    before_action :set_list
     before_action :set_item, only: [:update, :destroy]
+    before_action :set_category, only: [:create]
+    # before_action :set_list
 
     def create
         @item = Item.new(item_params)
@@ -26,6 +26,9 @@ class ItemsController < ApplicationController
     end
 
     def destroy
+        @category = @item.category
+        @list = @category.list
+
         @item.destroy
 
         redirect_to list_path(@list)
@@ -42,9 +45,9 @@ class ItemsController < ApplicationController
         @category = Category.find(params[:category_id])
     end
 
-    def set_list
-        @list = List.find(params[:list_id])
-    end
+    # def set_list
+    #     @list = List.find(params[:list_id])
+    # end
 
     def set_item
         @item = Item.find(params[:id])

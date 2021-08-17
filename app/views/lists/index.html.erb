@@ -7,5 +7,8 @@
       <h1>
         List: <%= link_to list.name, list_path(list) %>
       </h1>
+      <p>
+        <%= link_to "delete", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" } %>
+      </p>
   </li>
 <% end %>
