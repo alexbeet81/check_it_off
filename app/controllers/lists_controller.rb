@@ -36,8 +36,8 @@ class ListsController < ApplicationController
 
   def update
     @list.update(list_params)
-
-    if @list.save
+    @list.no_name
+    if @list.save!
       redirect_to lists_path
     else
       render :index

@@ -1,28 +1,31 @@
 class ItemsController < ApplicationController
     before_action :set_item, only: [:update, :destroy]
     before_action :set_category, only: [:create]
-    # before_action :set_list
+    # before_action :set_list, only: [:update]
 
     def create
         @item = Item.new(item_params)
-        
+        @list = @category.list
         @item.category = @category
-
+        @item.no_name
         if @item.save!
-            redirect_to list_path(@list)
+          redirect_to list_path(@list)
         else
-            render 'lists/show'
+          render 'lists/show'
         end
     end
 
     def update
-        @item.update(item_params)
+      @category = @item.category
+      @list = @category.list
+      @item.update(item_params)
+      @item.no_name
 
-        if @item.save
-            redirect_to list_path(@list)
-        else
-            render 'lists/show'
-        end
+      if @item.save
+        redirect_to list_path(@list)
+      else
+        render 'lists/show'
+      end
     end
 
     def destroy
