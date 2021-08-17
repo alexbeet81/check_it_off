@@ -7,6 +7,8 @@ class CategoriesController < ApplicationController
 
     @category.list = @list
 
+    @category.no_name
+
     if @category.save!
       redirect_to list_path(@list)
     else
@@ -17,6 +19,7 @@ class CategoriesController < ApplicationController
   def update
     @list = @category.list
     @category.update(category_params)
+    @category.no_name
     if @category.save
       redirect_to list_path(@list)
     else

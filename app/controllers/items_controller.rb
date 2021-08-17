@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
         @item = Item.new(item_params)
         @list = @category.list
         @item.category = @category
-
+        @item.no_name
         if @item.save!
           redirect_to list_path(@list)
         else
@@ -18,8 +18,9 @@ class ItemsController < ApplicationController
     def update
       @category = @item.category
       @list = @category.list
-
       @item.update(item_params)
+      @item.no_name
+
       if @item.save
         redirect_to list_path(@list)
       else
