@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, except: [:create]
   before_action :set_list
   def create
-    @category = Category.new
+    @category = Category.new(category_params)
     @category.list = @list
 
     if @category.save
@@ -21,7 +21,9 @@ class CategoriesController < ApplicationController
 
   private
 
-  def category_params; end
+  def category_params
+    params.require(:category).permit(:category_name, :list_id)
+  end
 
   def set_list
     @list = List.find(params[:list_id])
