@@ -7,7 +7,6 @@ class ListsController < ApplicationController
 
     ## TODO: Add a new list
     @list = List.new
-    
   end
 
   def show
