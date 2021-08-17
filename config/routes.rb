@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :lists do
-    resources :categories, only: [:create]
+    resources :categories, only: [:create] do 
+      resources :items, only: [:create]
+    end
   end
-
+  resources :items, only: [:update, :destroy]
   resources :categories, only: [:update, :destroy]
 end
