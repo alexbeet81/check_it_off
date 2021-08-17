@@ -1,5 +1,19 @@
+<%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "add list" %>
+<% end %>
 <% @lists.each do |list|%>
   <li>
-      <%= list.name %>
+      <h1>
+        List: <%= list.name %>
+      </h1>
+      <% list.categories.each do |category| %>
+        <h2>
+          Cat: <%= category.category_name %>
+        </h2>
+        <% category.items.each do |item| %>
+          item: <%= item.item_name %>
+        <% end %>
+      <% end %>
   </li>
 <% end %>
