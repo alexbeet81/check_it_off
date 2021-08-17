@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-        params.require(:item).permit(:item_name, :item_selected, :unavailable)
+        params.require(:item).permit(:item_name, :item_selected, :unavailable, :category_id)
     end
 
     def set_category
