@@ -19,6 +19,11 @@ class ListsController < ApplicationController
     # @categories = Category.where(id: list_id)
   end
 
+  def shopping
+    @list = List.find(params[:list_id])
+    @categories = @list.categories
+  end
+
   def create
     @list = List.new(list_params)
     @list.user = current_user
