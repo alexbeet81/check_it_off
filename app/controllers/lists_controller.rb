@@ -7,10 +7,14 @@ class ListsController < ApplicationController
 
     ## TODO: Add a new list
     @list = List.new
+    
   end
 
   def show
     # TODO: Add category
+
+    @category = Category.new
+    @item = Item.new
 
     # Find all cattegories where the list == list_id
     # @categories = Category.where(id: list_id)

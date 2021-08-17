@@ -1,2 +1,27 @@
 
 
+<h1>
+    <%= @list.name %>
+</h1>
+
+<%= simple_form_for([@list, @category]) do |f| %>
+    <%= f.input :category_name %>
+    <%= f.submit "add category" %>
+<% end %>
+
+<% @list.categories.each do |category| %>
+    <h3>
+        Category: <%= category.category_name %>
+
+        <% category.items.each do |item| %>
+            <p>
+                Item: <%= item.item_name %>
+            </p>
+        <% end %>
+        <%= simple_form_for([@list, category, @item]) do |f| %>
+            <%= f.input :item_name %>
+            <%= f.submit "add item" %>
+        <% end %>
+    </h3>
+<% end %>
+

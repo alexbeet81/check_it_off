@@ -5,15 +5,7 @@
 <% @lists.each do |list|%>
   <li>
       <h1>
-        List: <%= list.name %>
+        List: <%= link_to list.name, list_path(list) %>
       </h1>
-      <% list.categories.each do |category| %>
-        <h2>
-          Cat: <%= category.category_name %>
-        </h2>
-        <% category.items.each do |item| %>
-          item: <%= item.item_name %>
-        <% end %>
-      <% end %>
   </li>
 <% end %>
