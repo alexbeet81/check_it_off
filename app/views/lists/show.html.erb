@@ -20,8 +20,7 @@
         <% category.items.each do |item| %>
             <p>
                 Item: <%= item.item_name %>
-                <%= link_to "delete item", item_path(item), method: :delete, data: { confirm: "Are you quite sure?" } %>
-
+                <%= link_to "delete item", item_path(item), method: :delete %>
                 <%= simple_form_for(item) do |f| %>
                   <%= f.input :item_name %>
                   <%= f.submit "edit item" %>
