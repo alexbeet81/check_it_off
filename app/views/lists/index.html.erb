@@ -1,5 +1,11 @@
+<%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "add list" %>
+<% end %>
 <% @lists.each do |list|%>
   <li>
-      <%= list.name %>
+      <h1>
+        List: <%= link_to list.name, list_path(list) %>
+      </h1>
   </li>
 <% end %>

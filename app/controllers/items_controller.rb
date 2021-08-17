@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
         
         @item.category = @category
 
-        if @category.save
+        if @item.save!
             redirect_to list_path(@list)
         else
             render 'lists/show'

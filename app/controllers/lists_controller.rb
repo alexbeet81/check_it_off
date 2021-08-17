@@ -6,11 +6,15 @@ class ListsController < ApplicationController
     @lists = List.all
 
     ## TODO: Add a new list
-    @list = List.new(list_params)
+    @list = List.new
+    
   end
 
   def show
     # TODO: Add category
+
+    @category = Category.new
+    @item = Item.new
 
     # Find all cattegories where the list == list_id
     # @categories = Category.where(id: list_id)
@@ -18,8 +22,13 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
+    @list.user = current_user
 
-    if @list.save
+    # @list.name = "BOOOO" if @list.name.empty?
+
+    @list.no_name
+
+    if @list.save!
       redirect_to lists_path
     else
       render :new

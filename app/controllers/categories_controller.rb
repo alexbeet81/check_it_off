@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, except: [:create]
   before_action :set_list
+  
   def create
     @category = Category.new(category_params)
     @category.list = @list
