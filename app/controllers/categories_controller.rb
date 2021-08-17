@@ -1,20 +1,31 @@
 class CategoriesController < ApplicationController
   before_action :set_category, except: [:create]
-  before_action :set_list
+  before_action :set_list, only: :create
   
   def create
     @category = Category.new(category_params)
+
     @category.list = @list
 
+    if @category.save!
+      redirect_to list_path(@list)
+    else
+      render "list/show"
+    end
+  end
+
+  def update
+    @list = @category.list
+    @category.update(category_params)
     if @category.save
       redirect_to list_path(@list)
     else
       render "list/show"
     end
-
   end
 
   def destroy
+    @list = @category.list
     @category.destroy
 
     redirect_to list_path(@list)
@@ -33,5 +44,4 @@ class CategoriesController < ApplicationController
   def set_category
     @category = Category.find(params[:id])
   end
-
 end

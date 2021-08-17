@@ -1,5 +1,3 @@
-
-
 <h1>
     <%= @list.name %>
 </h1>
@@ -14,10 +12,20 @@
         Category: <%= category.category_name %>
         <%= link_to "delete category", category_path(category), method: :delete, data: { confirm: "Are you quite sure?" } %>
 
+        <%= simple_form_for(category) do |f| %>
+          <%= f.input :category_name %>
+          <%= f.submit "edit category" %>
+        <% end %>
+
         <% category.items.each do |item| %>
             <p>
                 Item: <%= item.item_name %>
                 <%= link_to "delete item", item_path(item), method: :delete, data: { confirm: "Are you quite sure?" } %>
+
+                <%= simple_form_for(item) do |f| %>
+                  <%= f.input :item_name %>
+                  <%= f.submit "edit item" %>
+                <% end %>
             </p>
         <% end %>
         <%= simple_form_for([@list, category, @item]) do |f| %>
