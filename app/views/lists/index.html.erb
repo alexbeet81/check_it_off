@@ -8,7 +8,7 @@
         List: <%= link_to list.name, list_path(list) %>
       </h1>
       <p>
-        <%= link_to "delete", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" } %>
+        <%= link_to "", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
         <%= simple_form_for(list) do |f| %>
           <%= f.input :name %>
           <%= f.submit "edit list name" %>
@@ -17,3 +17,5 @@
       </p>
   </li>
 <% end %>
+
+
