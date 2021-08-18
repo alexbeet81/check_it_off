@@ -6,6 +6,7 @@
   border-radius: 4px;
   background: #F0D366;
   transition: background 0.3s ease;
+  font-family: 'Roboto', sans-serif
 }
 
 .btn-flat:hover {
@@ -17,7 +18,7 @@
   width: 346px;
   height: 40px;
   background: #346582;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 24px;
   transition: background 0.3s ease;
   color: #FFFFFF;
@@ -40,6 +41,7 @@
   font-size: 16px;
   padding: 8px 24px;
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn-small:hover {
@@ -48,3 +50,7 @@
   text-decoration: none;
 }
 
+.fa-arrow-left {
+  color: #FFFFFF;
+  font-size: 24px;
+}
