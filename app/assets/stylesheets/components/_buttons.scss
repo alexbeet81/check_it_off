@@ -15,7 +15,7 @@
 }
 
 .btn-long {
-  width: 346px;
+  width: 352px;
   height: 40px;
   background: #346582;
   font-family: 'Roboto', sans-serif;
@@ -25,6 +25,7 @@
   border-radius: 4px;
   position: fixed;
   top: 72px;
+  z-index: 1;
 }
 
 .btn-long:hover {
