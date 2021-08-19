@@ -13,13 +13,14 @@
         <%= link_to list.name, list_path(list) %>
       </h1>
     </div>
-      <div class="icon-group">
-        <%= link_to "", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
-        <button type="button" class="fas fa-pen" data-toggle="modal" data-target="#editListName<%= list.id %>">
-        </button>
+      <div class="icon-group ">
+          <%= link_to "", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
+          <button type="button" class="fas fa-pen" data-toggle="modal" data-target="#editListName<%= list.id %>">
+          </button>
       </div>
   </div>
-  <div id="editListName<%= list.id %>" class="modal" tabindex="-1" role="dialog">
+
+  <div id="editListName<%= list.id %>" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -34,18 +35,17 @@
         </div>
         <div class="modal-footer">
           <%= f.submit "edit name", class: "btn btn-primary" %>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <% end %>
+        </div>
+
         </div>
       </div>
     </div>
   <% end %>
 </div>
 
-
-
-<div id="addListModal" class="modal" tabindex="-1" role="dialog">
+<div id="addListModal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
