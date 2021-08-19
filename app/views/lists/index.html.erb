@@ -3,8 +3,10 @@
 
 <div class="lists-container">
   <button type="button" class="btn-long list-button-flex" data-toggle="modal" data-target="#addListModal">
-    <i class="fas fa-plus"></i> list
+    <i class="fas fa-plus"></i>
+    <h2>list</h2>
   </button>
+
   <% @lists.each do |list|%>
   <div class="list-item">
     <div>
@@ -15,8 +17,8 @@
     </div>
       <div class="icon-group ">
           <%= link_to "", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
-          <button type="button" class="fas fa-pen" data-toggle="modal" data-target="#editListName<%= list.id %>">
-          </button>
+          <a type="button" class="fas fa-pen" data-toggle="modal" data-target="#editListName<%= list.id %>">
+          </a>
       </div>
   </div>
 
@@ -38,7 +40,6 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <% end %>
         </div>
-
         </div>
       </div>
     </div>
