@@ -2,8 +2,19 @@
   background: #346582;
   height: 56px;
   display:flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0px;
   width:100%;
   z-index: 1;
+
 }
+
+ .app-name p {
+    color: white;
+    font-family:'Pacifico', cursive;
+    font-size:18px;
+    position: relative;
+    top: 8px;
+  }
