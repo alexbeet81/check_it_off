@@ -1,8 +1,25 @@
 <%= render 'shared/navbar' %>
 <br> <br> <br>
-<button type="button" class="btn-long list-button-flex" data-toggle="modal" data-target="#addListModal">
-  <i class="fas fa-plus"></i> list
-</button>
+
+<div class="lists-container">
+  <button type="button" class="btn-long list-button-flex" data-toggle="modal" data-target="#addListModal">
+    <i class="fas fa-plus"></i> list
+  </button>
+  <% @lists.each do |list|%>
+  <div class="list-item">
+    <div>
+      <h1>
+        <i class="far fa-star"></i>
+        <%= link_to list.name, list_path(list) %>
+      </h1>
+    </div>
+      <div class="icon-group">
+        <%= link_to "", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
+        <%= link_to "", list_path(list), class:"fas fa-pen" %>
+      </div>
+  </div>
+ <% end %>
+</div>
 
 <div id="addListModal" class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -26,20 +43,5 @@
   </div>
 </div>
 
-<% @lists.each do |list|%>
-  <li>
-      <h1>
-        List: <%= link_to list.name, list_path(list) %>
-      </h1>
-      <p>
-        <%= link_to "", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
-        <%= simple_form_for(list) do |f| %>
-          <%= f.input :name %>
-          <%= f.submit "edit list name" %>
-        <% end %>
-
-      </p>
-  </li>
-<% end %>
 
 
