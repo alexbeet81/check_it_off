@@ -1,8 +1,49 @@
 <%= render 'shared/navbar' %>
 <br> <br> <br>
-<button type="button" class="btn-long list-button-flex" data-toggle="modal" data-target="#addListModal">
-  <i class="fas fa-plus"></i> list
-</button>
+
+<div class="lists-container">
+  <button type="button" class="btn-long list-button-flex" data-toggle="modal" data-target="#addListModal">
+    <i class="fas fa-plus"></i> list
+  </button>
+  <% @lists.each do |list|%>
+  <div class="list-item">
+    <div>
+      <h1>
+        <i class="far fa-star"></i>
+        <%= link_to list.name, list_path(list) %>
+      </h1>
+    </div>
+      <div class="icon-group">
+        <%= link_to "", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
+        <button type="button" class="fas fa-pen" data-toggle="modal" data-target="#editListName<%= list.id %>">
+        </button>
+      </div>
+  </div>
+  <div id="editListName<%= list.id %>" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">edit list name</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(list) do |f| %>
+          <%= f.input :name %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit "edit name", class: "btn btn-primary" %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
 
 <div id="addListModal" class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -26,20 +67,7 @@
   </div>
 </div>
 
-<% @lists.each do |list|%>
-  <li>
-      <h1>
-        List: <%= link_to list.name, list_path(list) %>
-      </h1>
-      <p>
-        <%= link_to "", list_path(list), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
-        <%= simple_form_for(list) do |f| %>
-          <%= f.input :name %>
-          <%= f.submit "edit list name" %>
-        <% end %>
 
-      </p>
-  </li>
-<% end %>
+
 
 

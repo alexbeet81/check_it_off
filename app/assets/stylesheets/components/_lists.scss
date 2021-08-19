@@ -1,0 +1,40 @@
+
+.lists-container {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+
+}
+
+.list-item {
+  width: 346px;
+  height:32px;
+  background-color: #F0D366;
+  margin: 8px;
+  padding: 4px;
+  border-radius: 4px;
+  position: relative;
+  z-index: -1;
+  top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#346582;
+  font-family: 'Roboto', sans-serif;
+}
+
+.list-item h1 a {
+  font-size: 24px;
+  margin: 0px;
+  color:#346582;
+}
+
+.list-item i {
+  font-size: 20px;
+  margin: 0px;
+}
+
+.icon-group a {
+  color:#346582;
+}
