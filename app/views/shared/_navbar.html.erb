@@ -1,11 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-   <%= link_to "", root_path, class:"fas fa-arrow-left" %>
-      <% if user_signed_in? %>
-          <%= link_to "Log out", "#", class: "btn-small" %>
-
-      <% else %>
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      <% end %>
-    </ul>
-  </div>
+<div class="navbar">
+  <%= link_to "", root_path, class:"fas fa-arrow-left" %>
+  <%= link_to "log out", destroy_user_session_path, method: :delete, class: "btn-small" %>
 </div>
