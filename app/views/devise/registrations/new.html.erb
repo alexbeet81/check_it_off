@@ -1,25 +1,39 @@
-<h2>Sign up</h2>
+<body class="session-background">
+  <div class="image-div text-center">
+    <%= image_tag "IMG_9869.PNG", alt: "logo_checkitoff", style:"width:200px; margin: 40px;" %>
+  </div>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="container form-inputs">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
+                placeholder: "email",
+                label: false,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                label: false,
+                placeholder: "password - minimum 6 characters",
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: true,
+                label: false,
+                placeholder: "confirm-password",
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="form-actions text-center session-button">
+    <%= f.button :submit, "Sign up", class:"btn-flat" %>
   </div>
-<% end %>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="shared-link-space">
+    <%= render "devise/shared/links" %>
+  </div>
+
+</body>
+

@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<body class="landing-background">
+<% if user_signed_in? %>
+<%= link_to "let's shop", lists_path(@lists), class: "btn-flat" %>
+<% else %>
+<%= link_to "Sign_up", new_user_registration_path, class: "btn-flat" %>
+<% end %>
+</body>
