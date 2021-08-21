@@ -1,7 +1,16 @@
 <body class="landing-background">
-<% if user_signed_in? %>
-<%= link_to "let's shop", lists_path(@lists), class: "btn-flat" %>
-<% else %>
-<%= link_to "Sign_up", new_user_registration_path, class: "btn-flat" %>
-<% end %>
+  <div class="image-div text-center">
+    <%= image_tag "IMG_9869.PNG", alt: "logo_checkitoff", style:"width:350px; margin-botom:80px; margin-top: 80px;" %>
+  </div>
+  <br><br><br><br>
+  <div class="landing-button text-center">
+    <% if user_signed_in? %>
+  <%= link_to "shop", lists_path(@lists), class: "btn-flat" %>
+  <% else %>
+  <%= link_to "sign up", new_user_registration_path, class: "btn-flat" %>
+  <br>
+  <%= link_to "log in", new_user_session_path, class: "btn-flat"  %>
+  <% end %>
+  </div>
+
 </body>
