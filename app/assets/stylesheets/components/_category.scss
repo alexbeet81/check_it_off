@@ -99,13 +99,7 @@ background-color: #07908f;
 }
 
 
-// .modal-body 
-.modal-body-category {
-  background-color: #ffffff;
-  color: white;
-  border: none;
-  padding: 4px;
-}
+
 // .modal-content
 .modal-content-category {
   position: relative;
@@ -118,4 +112,14 @@ background-color: #07908f;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   outline: 0;
+}
+
+// .modal-body 
+.modal-body-category {
+  align-self: center;
+  width: 354px;
+  background-color: #ffffff;
+  color: white;
+  border: none;
+  padding: 4px;
 }
