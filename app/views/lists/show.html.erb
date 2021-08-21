@@ -37,3 +37,26 @@
 
 <%= link_to "Go Shopping!", list_shopping_path(@list) %>
 
+  <button type="button" class="btn-long list-button-flex" data-toggle="modal" data-target="#addListModal">
+    <i class="fas fa-plus"></i>
+    <h2>list</h2>
+  </button>
+
+<div id="addListModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">name your list</h5>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(@list) do |f| %>
+        <%= f.input :name, label: false %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "add list", class: "btn btn-flat" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
