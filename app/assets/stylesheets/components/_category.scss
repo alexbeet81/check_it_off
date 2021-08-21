@@ -1,0 +1,121 @@
+.category_cards {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4px;
+}
+
+.meat_fish,
+.fruit_veg,
+.snacks,
+.soft_drinks,
+.beer_wine,
+.household,
+.health,
+.beauty,
+.bakery,
+.deli,
+.frozen,
+.petfood,
+.toys,
+.clothes,
+.stationary {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 112px;
+  height: 112px;
+  h1 {
+    font-size: 16px;
+    font-family: 'roboto';
+  }
+  i {
+    font-size: 64px;
+    margin-bottom: 8px;
+  }
+}
+
+.meat_fish {
+  background-color: #d8315b;
+}
+
+.fruit_veg {
+  background-color: #50723c;
+}
+
+.snacks {
+  background-color: #f2a540;
+}
+
+.soft_drinks {
+  background-color: #8c271e;
+}
+
+.beer_wine {
+  background-color: #eb6c6c;
+}
+
+.household {
+background-color: #07908f;
+}
+
+.health {
+  background-color: #485696;
+}
+
+.beauty {
+  background-color: #c08497;
+}
+
+.bakery {
+  background-color: #f78e69;
+}
+
+.deli {
+  background-color: #ffa69e;
+}
+
+.frozen {
+  background-color: #9bbdf9;
+}
+
+.petfood {
+  background-color: #7b2d26;
+}
+
+.toys {
+  background-color: #e8aa15;
+}
+
+.clothes {
+  background-color: #e26d5a; 
+}
+
+.stationary {
+  background-color: #f29559;
+}
+
+
+// .modal-body 
+.modal-body-category {
+  background-color: #ffffff;
+  color: white;
+  border: none;
+  padding: 4px;
+}
+// .modal-content
+.modal-content-category {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  outline: 0;
+}
