@@ -1,18 +1,20 @@
 <%= render 'shared/navbar' %>
-<h1>
-    <%= @list.name %>
-</h1>
+<div class="category-list">
+  <button type="button" class="btn-long list-button-flex " data-toggle="modal" data-target="#addListModal">
+    <i class="fas fa-plus"></i>
+    <h2>category</h2>
+  </button>
 
-<%= simple_form_for([@list, @category]) do |f| %>
-    <%= f.input :category_name %>
-    <%= f.submit "add category" %>
-<% end %>
-
-<% @list.categories.each do |category| %>
-    <h3>
-        Category: <%= category.category_name %>
-        <%= link_to "delete category", category_path(category), method: :delete, data: { confirm: "Are you quite sure?" } %>
-
+  <% @list.categories.each do |category| %>
+  <div class="category-item">
+    <div>
+      <h3> <%= category.category_name %> </h3>
+    </div>
+    <div class="icon-group-cat">
+      <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
+      <a type="button" class="fas fa-pen"></a>
+    </div>
+  </div>
         <%= simple_form_for(category) do |f| %>
           <%= f.input :category_name %>
           <%= f.submit "edit category" %>
@@ -35,7 +37,11 @@
     </h3>
 <% end %>
 
-<%= link_to "Go Shopping!", list_shopping_path(@list) %>
+  <div>
+    <%= link_to "go shopping", list_shopping_path(@list), class: 'btn btn-long-shop'%>
+  </div>
+
+</div>
 
 <button type="button" data-toggle="modal" data-target="#addCategoryModal">BUTTON HERE!!!</button>
 
@@ -48,3 +54,4 @@
     </div>
   </div>
 </div>
+
