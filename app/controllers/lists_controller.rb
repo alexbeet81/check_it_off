@@ -33,6 +33,7 @@ class ListsController < ApplicationController
     @list.no_name
 
     if @list.save!
+      @list.default_cat
       redirect_to lists_path
     else
       render :new
