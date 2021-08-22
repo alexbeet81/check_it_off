@@ -13,13 +13,19 @@
     </div>
     <div class="icon-group-cat">
       <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
-      <a type="button" class="fas fa-pen"></a>
+      <a type="button" class="fas fa-pen" data-toggle="modal" data-target="#editCategoryModal<%= category.id %>"></a>
     </div>
   </div>
-        <%= simple_form_for(category) do |f| %>
-          <%= f.input :category_name %>
-          <%= f.submit "edit category" %>
-        <% end %>
+
+  <div id="editCategoryModal<%= category.id  %>" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content modal-content-category">
+        <div class="modal-body modal-body-category">
+          <%= render 'shared/categoryselect' %>
+        </div>
+      </div>
+    </div>
+  </div>
 
         <% category.items.each do |item| %>
             <p>
@@ -53,4 +59,8 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+const itemsInput = document.querySelectorAll(".")
+</script>
 
