@@ -1,8 +1,9 @@
 class ListPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
+  end
     def index?
       true
     end
@@ -20,5 +21,4 @@ class ListPolicy < ApplicationPolicy
     def destroy?
       record.user == user
     end
-  end
 end
