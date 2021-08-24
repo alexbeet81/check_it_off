@@ -39,7 +39,7 @@
       <div class="edit-form hidden">
       <%= simple_form_for(item) do |f| %>
         <%= f.input :item_name, label: false %>
-        <%= f.submit "edit item" %>
+        <%= f.submit "edit item", class:"hide-edit" %>
       <% end %>
       </div>
     </div>
@@ -109,7 +109,7 @@
     })
   })
 
-const editFormBtn = document.querySelectorAll(".edit-form")
+const editFormBtn = document.querySelectorAll(".hide-edit")
 editFormBtn.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     console.log(e)
