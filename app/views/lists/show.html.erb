@@ -87,13 +87,18 @@
   editItemBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       console.log(e)
-      add()
+      editAdd()
     })
   })
 
   const add = () => {
    const userAnswers = document.querySelectorAll(".input-box")
    userAnswers.forEach(e => e.classList.toggle("hidden"))
+  }
+
+  const editAdd = () => {
+    const showEditForm = document.querySelectorAll(".edit-form")
+    showEditForm.forEach(e => e.classList.toggle("hidden"))
   }
 
   const hideItemBtn = document.querySelectorAll(".hide-stuff")
@@ -108,7 +113,7 @@ const editFormBtn = document.querySelectorAll(".edit-form")
 editFormBtn.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     console.log(e)
-    add()
+    editAdd()
   })
 })
 
