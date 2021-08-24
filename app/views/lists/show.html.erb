@@ -28,23 +28,29 @@
   </div>
 
    <% category.items.each do |item| %>
-    <p >
+    <div class="item-input">
+      <i class="far fa-circle"></i>
       <%= item.item_name %>
-      <%= link_to "delete item", item_path(item), method: :delete %>
-      <%= simple_form_for(item) do |f| %>
-      <%= f.input :item_name %>
-      <%= f.submit "edit item" %>
-      <% end %>
-    </p>
-      <% end %>
-      <div class="showItem">
-        <i class="fas fa-plus"></i>
-        <a> add item </a>
+      <div class="icon-group-item">
+        <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
+        <a id="edit-item" class="fas fa-pen"></a>
       </div>
-      <div class="itemElement hidden">
+
+      <div class="edit-form hidden">
+      <%= simple_form_for(item) do |f| %>
+        <%= f.input :item_name %>
+        <%= f.submit "edit item" %>
+      <% end %>
+      </div>
+    </div>
+      <% end %>
+     <div id="addItem" class="item-add">
+        <i class="fas fa-plus">add item</i>
+      </div>
+      <div class="input-box hidden">
         <%= simple_form_for([@list, category, @item]) do |f| %>
         <%= f.input :item_name %>
-        <%= f.submit "add item" %>
+        <%= f.submit "add item", class:"hide-stuff" %>
       <% end %>
       </div>
 
@@ -68,11 +74,42 @@
 
 <script type="text/javascript">
 
-const itemsInput = () => {
-  // const itemsInput = document.querySelectorAll(".itemElement")
-  const showItem = document.querySelectorAll(".showItem")
-  // itemsInput.forEach(e => e.classList.toggle("hidden"))
-  showItem.forEach(e => e.classList.toggle("hidden"))
-}
+  const addItemBtn = document.querySelectorAll(".item-add")
+  addItemBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+    console.log(e)
+    add()
+    })
+  })
+
+  const editItemBtn = document.querySelectorAll("#edit-item")
+  editItemBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      console.log(e)
+      add()
+    })
+  })
+
+  const add = () => {
+   const userAnswers = document.querySelectorAll(".input-box")
+   userAnswers.forEach(e => e.classList.toggle("hidden"))
+  }
+
+  const hideItemBtn = document.querySelectorAll(".hide-stuff")
+  hideItemBtn.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      console.log(e)
+      add()
+    })
+  })
+
+const editFormBtn = document.querySelectorAll(".edit-form")
+editFormBtn.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    console.log(e)
+    add()
+  })
+})
+
 </script>
 

@@ -51,3 +51,29 @@
 .show {
   display: block;
 }
+
+.item-input {
+  display:flex;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  width: 338px;
+  padding-left: 4px;
+  padding-right: 4px;
+  position: relative;
+  background-color: #FFE9D9;
+  margin: 8px;
+  top: 48px;
+}
+
+.icon-group-item a {
+  color: #346582;
+}
+
+.item-add {
+    position: relative;
+    top: 48px;
+}
+
+.item-add i {
+  text-align: left;
+}
