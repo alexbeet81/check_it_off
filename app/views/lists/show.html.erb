@@ -38,7 +38,7 @@
 
       <div class="edit-form hidden">
       <%= simple_form_for(item) do |f| %>
-        <%= f.input :item_name %>
+        <%= f.input :item_name, label: false %>
         <%= f.submit "edit item" %>
       <% end %>
       </div>
@@ -50,7 +50,7 @@
       </div>
       <div class="input-box hidden">
         <%= simple_form_for([@list, category, @item]) do |f| %>
-        <%= f.input :item_name %>
+        <%= f.input :item_name, label: false, placeholder: "item name" %>
         <%= f.submit "add item", class:"hide-stuff" %>
       <% end %>
       </div>
