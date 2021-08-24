@@ -70,10 +70,13 @@
 }
 
 .item-add {
-    position: relative;
-    top: 48px;
+  position: relative;
+  top: 48px;
+  font-family: 'Roboto', sans-serif;
+  i {
+  color: #A1A1A1;
+  font-size: 16px;
+  }
 }
 
-.item-add i {
-  text-align: left;
-}
+
