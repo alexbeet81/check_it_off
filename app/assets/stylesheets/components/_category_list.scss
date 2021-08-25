@@ -55,6 +55,7 @@
 .item-input {
   display:flex;
   justify-content: space-between;
+  align-items:center;
   font-family: 'Roboto', sans-serif;
   width: 338px;
   padding-left: 4px;
@@ -70,8 +71,13 @@
 }
 
 .item-add {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
   position: relative;
   top: 48px;
+  left: -96px;
+  margin: 8px;
   font-family: 'Roboto', sans-serif;
   i {
   color: #A1A1A1;
