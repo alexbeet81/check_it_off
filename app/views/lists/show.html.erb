@@ -31,6 +31,7 @@
     <div class="item-input">
       <i class="far fa-circle"></i>
       <%= item.item_name %>
+      <%= item.id %>
       <div class="icon-group-item">
         <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
         <a id="edit-item" class="fas fa-pen"></a>
@@ -44,7 +45,7 @@
       </div>
     </div>
       <% end %>
-     <div id="addItem-<%= item.id %>" data-id="<%= item.id %>" class="item-add">
+     <div id="addItem-<%= category.id %>" data-id="<%= category.id %>" class="item-add">
         <p>
         <i class="fas fa-plus"> </i>
         add another item

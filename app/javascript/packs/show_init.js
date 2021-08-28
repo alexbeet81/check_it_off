@@ -2,7 +2,6 @@ const initShow = () => {
     const addItemBtn = document.querySelectorAll(".item-add")
   addItemBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-    console.log(e)
     add()
     })
   })
@@ -10,7 +9,6 @@ const initShow = () => {
   const editItemBtn = document.querySelectorAll("#edit-item")
   editItemBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      console.log(e)
       editAdd()
     })
   })
@@ -28,7 +26,6 @@ const initShow = () => {
   const hideItemBtn = document.querySelectorAll(".hide-stuff")
   hideItemBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      console.log(e)
       add()
     })
   })
@@ -36,29 +33,25 @@ const initShow = () => {
   const editFormBtn = document.querySelectorAll(".hide-edit")
   editFormBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      console.log(e)
       editAdd()
       hideShowAddItem()
     })
   })
 
-  // const hideShowAddItem = () => {
-  //   const hideAdd = document.querySelectorAll("#addItem")
-  //   hideAdd.forEach(e => e.classList.toggle("hidden"))
-  //   console.log('hidden class added')
-  // }
-
-  // const hideEventBtn = document.querySelectorAll("#addItem")
-  // hideEventBtn.forEach((btn) => {
-  //   btn.addEventListener('click', (e) => {
-  //     hideShowAddItem()
-  //     console.log('hidden add item')
-  //   })
-  // })
+  const hideShowAddItem = () => {
+    const hideAdd = document.querySelectorAll("#addItem")
+    hideAdd.forEach(e => e.classList.toggle("hidden"))
+    console.log('hidden class added')
+  }
 
   const itemAddEl = document.querySelectorAll('.item-add')
   itemAddEl.forEach(e => {
     console.log(e.dataset.id)
+    const hideEventBtn = document.querySelector(`#addItem-${e.dataset.id}`)
+    hideEventBtn.addEventListener('click', (e) => {
+      hideShowAddItem()
+      console.log('hidden add item')
+    })
   })
 }
 
