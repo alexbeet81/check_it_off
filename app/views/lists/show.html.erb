@@ -39,8 +39,10 @@
 
       <div class="edit-form hidden">
       <%= simple_form_for(item) do |f| %>
+        <div class="flexbox-class">
         <%= f.input :item_name, label: false %>
         <%= f.submit "edit item", class:"hide-edit" %>
+      </div>
       <% end %>
       </div>
     </div>

@@ -23,6 +23,11 @@ const initShow = () => {
     showEditForm.forEach(e => e.classList.toggle("hidden"))
   }
 
+  const showHideIcons = () => {
+    const showHideIcons = document.querySelectorAll("icon-group-item")
+    showHideIcons.forEach(e => e.classList.toggle("hidden"))
+  }
+
   const hideItemBtn = document.querySelectorAll(".hide-stuff")
   hideItemBtn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -35,6 +40,7 @@ const initShow = () => {
     btn.addEventListener('click', (e) => {
       editAdd()
       hideShowAddItem()
+      showHideIcons()
     })
   })
 
@@ -47,8 +53,9 @@ const initShow = () => {
   const itemAddEl = document.querySelectorAll('.item-add')
   itemAddEl.forEach(e => {
     console.log(e.dataset.id)
-    const hideEventBtn = document.querySelector(`#addItem-${e.dataset.id}`)
+    const hideEventBtn = document.getElementById(`addItem-${e.dataset.id}`)
     hideEventBtn.addEventListener('click', (e) => {
+      console.log(e)
       hideShowAddItem()
       console.log('hidden add item')
     })
@@ -56,3 +63,5 @@ const initShow = () => {
 }
 
 export { initShow };
+
+// if the data is
