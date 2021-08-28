@@ -49,8 +49,7 @@
         <p>
         <i class="fas fa-plus"> </i>
         add another item
-        </p>
-      </div>
+        </p>      </div>
       <div class="input-box hidden">
         <%= simple_form_for([@list, category, @item]) do |f| %>
         <%= f.input :item_name, label: false, placeholder: "item name" %>
@@ -75,5 +74,3 @@
     </div>
   </div>
 </div>
-
-
