@@ -44,7 +44,7 @@
       </div>
     </div>
       <% end %>
-     <div id="addItem" class="item-add">
+     <div id="addItem-<%= item.id %>" data-id="<%= item.id %>" class="item-add">
         <p>
         <i class="fas fa-plus"> </i>
         add another item
@@ -75,49 +75,4 @@
   </div>
 </div>
 
-<script type="text/javascript">
-
-  const addItemBtn = document.querySelectorAll(".item-add")
-  addItemBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-    console.log(e)
-    add()
-    })
-  })
-
-  const editItemBtn = document.querySelectorAll("#edit-item")
-  editItemBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      console.log(e)
-      editAdd()
-    })
-  })
-
-  const add = () => {
-   const userAnswers = document.querySelectorAll(".input-box")
-   userAnswers.forEach(e => e.classList.toggle("hidden"))
-  }
-
-  const editAdd = () => {
-    const showEditForm = document.querySelectorAll(".edit-form")
-    showEditForm.forEach(e => e.classList.toggle("hidden"))
-  }
-
-  const hideItemBtn = document.querySelectorAll(".hide-stuff")
-  hideItemBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      console.log(e)
-      add()
-    })
-  })
-
-const editFormBtn = document.querySelectorAll(".hide-edit")
-editFormBtn.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    console.log(e)
-    editAdd()
-  })
-})
-
-</script>
 
