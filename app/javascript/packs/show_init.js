@@ -47,10 +47,14 @@ const initShow = () => {
   const itemAddEl = document.querySelectorAll('.item-add')
   itemAddEl.forEach(e => {
     console.log(e.dataset.id)
-    const hideEventBtn = document.querySelector(`#addItem-${e.dataset.id}`)
+    const id = e.dataset.id
+    
+    const hideEventBtn = document.querySelector(`#addItem-${id}`)
+    
     hideEventBtn.addEventListener('click', (e) => {
+      console.log(e)
       hideShowAddItem()
-      console.log('hidden add item')
+      // console.log('hidden add item')
     })
   })
 }
