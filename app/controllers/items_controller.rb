@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
         @list = @category.list
         @item.category = @category
         @item.no_name
+        
         if @item.save!
           redirect_to list_path(@list)
         else
