@@ -81,3 +81,14 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.flexbox-class {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hide-edit {
+  position: relative;
+  top: -9px;
+}
+
