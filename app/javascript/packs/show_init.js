@@ -1,3 +1,5 @@
+import { ContextExclusionPlugin } from "webpack"
+
 const initShow = () => {
     const addItemBtn = document.querySelectorAll(".item-add")
   addItemBtn.forEach((btn) => {
@@ -38,8 +40,9 @@ const initShow = () => {
     })
   })
 
-  const hideShowAddItem = () => {
-    const hideAdd = document.querySelectorAll("#addItem")
+  const hideShowAddItem = (e) => {
+    console.log(e)
+    const hideAdd = document.querySelectorAll(`#addItem-${id}`)
     hideAdd.forEach(e => e.classList.toggle("hidden"))
     console.log('hidden class added')
   }
@@ -53,7 +56,8 @@ const initShow = () => {
     
     hideEventBtn.addEventListener('click', (e) => {
       console.log(e)
-      hideShowAddItem()
+      // hideShowAddItem(e)
+      // console.log(hideEventBtn)
       // console.log('hidden add item')
     })
   })
