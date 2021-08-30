@@ -6,27 +6,18 @@ const initShow = () => {
     })
   })
 
-  const editItemBtn = document.querySelectorAll("#edit-item")
-  editItemBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      editAdd()
-    })
-  })
+  // const editItemBtn = document.querySelectorAll("#edit-item")
+  // editItemBtn.forEach((btn) => {
+  //   btn.addEventListener('click', (e) => {
+  //     editAdd()
+  //   })
+  // })
 
   const add = () => {
    const userAnswers = document.querySelectorAll(".input-box")
    userAnswers.forEach(e => e.classList.toggle("hidden"))
   }
 
-  const editAdd = () => {
-    const showEditForm = document.querySelectorAll(".edit-form")
-    showEditForm.forEach(e => e.classList.toggle("hidden"))
-  }
-
-  const showHideIcons = () => {
-    const showHideIcons = document.querySelectorAll("icon-group-item")
-    showHideIcons.forEach(e => e.classList.toggle("hidden"))
-  }
 
   const hideItemBtn = document.querySelectorAll(".hide-stuff")
   hideItemBtn.forEach((btn) => {
@@ -35,29 +26,54 @@ const initShow = () => {
     })
   })
 
-  const editFormBtn = document.querySelectorAll(".hide-edit")
-  editFormBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      editAdd()
-      hideShowAddItem()
-      showHideIcons()
+
+  // const editFormBtn = document.querySelectorAll(".hide-edit")
+  // editFormBtn.forEach((btn) => {
+  //   btn.addEventListener('click', (e) => {
+  //     onEditItemSelect()
+  //     hideShowAddItem()
+  //   })
+  // })
+
+
+  const toggleClass = (data) => {
+    return data.classList.toggle("hidden")
+  }
+
+  const iconGroupItemSelector = document.querySelectorAll('.icon-group-item')
+  iconGroupItemSelector.forEach(e => {
+    const id = e.dataset.id
+
+    const editItemSelector = document.querySelector(`#edit-item-${id}`)
+    const editFormSelector = document.querySelector(`#edit-form-${id}`)
+    const itemWrapperSelector = document.querySelector(`#item-wrapper-${id}`)
+    
+    editItemSelector.addEventListener('click', (e) => {
+      // resets everything
+      toggleClass(editItemSelector)
+      toggleClass(editFormSelector)
+      toggleClass(itemWrapperSelector)
     })
   })
 
-  const hideShowAddItem = () => {
-    const hideAdd = document.querySelectorAll("#addItem")
-    hideAdd.forEach(e => e.classList.toggle("hidden"))
-    console.log('hidden class added')
-  }
-
   const itemAddEl = document.querySelectorAll('.item-add')
   itemAddEl.forEach(e => {
-    console.log(e.dataset.id)
-    const hideEventBtn = document.getElementById(`addItem-${e.dataset.id}`)
-    hideEventBtn.addEventListener('click', (e) => {
-      console.log(e)
-      hideShowAddItem()
-      console.log('hidden add item')
+    // console.log(e.dataset.id)
+    const id = e.dataset.id
+    
+    const addAnotherItemSelector = document.querySelector(`#addItem-${id}`)
+    const addItemSelector = document.querySelector(`#submit-item-${id}`)
+
+    addAnotherItemSelector.addEventListener('click', (e) => {
+      // addAnotherItemSelector.classList.toggle("hidden")
+      //anything in here will be attached to a single id
+      toggleClass(addAnotherItemSelector)
+      // editAdd(addAnotherItemSelector)
+      // console.log('hidden add item')
+    })
+
+    addItemSelector.addEventListener('click', (e) => {
+      toggleClass(addItemSelector)
     })
   })
 }

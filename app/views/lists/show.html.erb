@@ -30,20 +30,20 @@
    <% category.items.each do |item| %>
     <div class="item-input">
       <i class="far fa-circle"></i>
-      <%= item.item_name %>
-      <%= item.id %>
-      <div class="icon-group-item">
-        <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
-        <a id="edit-item" class="fas fa-pen"></a>
+      <div id="item-wrapper-<%= item.id %>">
+        <%= item.item_name %>
+        <div data-id="<%= item.id %>" class="icon-group-item">
+          <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
+          <a id="edit-item-<%= item.id %>" class="fas fa-pen"></a>
+        </div>   
       </div>
 
-      <div class="edit-form hidden">
-      <%= simple_form_for(item) do |f| %>
-        <div class="flexbox-class">
-        <%= f.input :item_name, label: false %>
-        <%= f.submit "edit item", class:"hide-edit" %>
-      </div>
-      <% end %>
+
+      <div id="edit-form-<%= item.id %>" class="hidden">
+        <%= simple_form_for(item) do |f| %>
+          <%= f.input :item_name, label: false %>
+          <%= f.submit "edit item", class:"hide-edit" %>
+        <% end %>
       </div>
     </div>
       <% end %>
@@ -55,7 +55,7 @@
       <div class="input-box hidden">
         <%= simple_form_for([@list, category, @item]) do |f| %>
         <%= f.input :item_name, label: false, placeholder: "item name" %>
-        <%= f.submit "add item", class:"hide-stuff" %>
+        <%= f.submit "add item", id:"submit-item-#{category.id}" %>
       <% end %>
       </div>
 
