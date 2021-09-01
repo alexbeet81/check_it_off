@@ -73,7 +73,7 @@
   color: #346582;
 }
 
-  .item-wrapper {
+  .item-stuff {
     display: flex;
     justify-content:space-between;
     flex-direction: row;
@@ -101,3 +101,7 @@
   top: -9px;
 }
 
+.input-box {
+  position:relative;
+  top: 56px;
+}
