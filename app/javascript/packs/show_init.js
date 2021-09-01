@@ -1,10 +1,10 @@
 const initShow = () => {
-    const addItemBtn = document.querySelectorAll(".item-add")
-  addItemBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-    add()
-    })
-  })
+  //   const addItemBtn = document.querySelectorAll(".item-add")
+  // addItemBtn.forEach((btn) => {
+  //   btn.addEventListener('click', (e) => {
+  //   add()
+  //   })
+  // })
 
   // const editItemBtn = document.querySelectorAll("#edit-item")
   // editItemBtn.forEach((btn) => {
@@ -13,17 +13,17 @@ const initShow = () => {
   //   })
   // })
 
-  const add = () => {
-   const userAnswers = document.querySelectorAll(".input-box")
-   userAnswers.forEach(e => e.classList.toggle("hidden"))
-  }
+  // const add = () => {
+  //  const userAnswers = document.querySelectorAll(".input-box")
+  //  userAnswers.forEach(e => e.classList.toggle("hidden"))
+  // }
 
-  const hideItemBtn = document.querySelectorAll(".hide-stuff")
-  hideItemBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      add()
-    })
-  })
+  // const hideItemBtn = document.querySelectorAll(".hide-stuff")
+  // hideItemBtn.forEach((btn) => {
+  //   btn.addEventListener('click', (e) => {
+  //     add()
+  //   })
+  // })
 
   // const editFormBtn = document.querySelectorAll(".hide-edit")
   // editFormBtn.forEach((btn) => {
@@ -47,6 +47,7 @@ const initShow = () => {
     
     editItemSelector.addEventListener('click', (e) => {
       // resets everything
+
       toggleClass(editItemSelector)
       toggleClass(editFormSelector)
       toggleClass(itemWrapperSelector)
@@ -60,17 +61,25 @@ const initShow = () => {
     
     const addAnotherItemSelector = document.querySelector(`#addItem-${id}`)
     const addItemSelector = document.querySelector(`#submit-item-${id}`)
+    const inputBoxSelector = document.querySelector('.input-box')
+
+    console.log(addItemSelector)
 
     addAnotherItemSelector.addEventListener('click', (e) => {
       // addAnotherItemSelector.classList.toggle("hidden")
-      //anything in here will be attached to a single id
+      // anything in here will be attached to a single id
+
+      // console.log('click on add item',e)
       toggleClass(addAnotherItemSelector)
+      toggleClass(inputBoxSelector)
+
       // editAdd(addAnotherItemSelector)
       // console.log('hidden add item')
     })
 
     addItemSelector.addEventListener('click', (e) => {
       toggleClass(addItemSelector)
+      toggleClass(addAnotherItemSelector)
     })
   })
 }
