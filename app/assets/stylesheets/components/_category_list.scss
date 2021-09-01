@@ -15,7 +15,7 @@
   width: 346px;
   height:32px;
   background-color: #F29559;
-  margin: 8px;
+  // margin: 8px;
   border-radius: 4px;
   position: relative;
   top: 48px;
@@ -23,9 +23,14 @@
   align-items: center;
   color:white;
   font-family: 'Roboto', sans-serif;
-  padding: 0px;
+  // padding: 0px;
   padding-left: 4px;
   padding-right: 4px;
+  .category-title {
+    position: relative;
+    top: 4px;
+    margin: 0px;
+  }
 }
 
 .category-item i {
@@ -53,9 +58,6 @@
 }
 
 .item-input {
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
   font-family: 'Roboto', sans-serif;
   align-items:center;
   width: 338px;
@@ -70,6 +72,12 @@
 .icon-group-item a {
   color: #346582;
 }
+
+  .item-wrapper {
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+  }
 
 .item-add {
   position: relative;

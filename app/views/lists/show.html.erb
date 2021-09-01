@@ -8,7 +8,7 @@
 
   <% @list.categories.each do |category| %>
   <div class="category-item">
-    <div>
+    <div class="category-title">
       <h3> <%= category.category_name %> </h3>
     </div>
     <div class="icon-group-cat">
@@ -29,8 +29,8 @@
 
    <% category.items.each do |item| %>
     <div class="item-input">
-      <i class="far fa-circle"></i>
-      <div id="item-wrapper-<%= item.id %>">
+      <div id="item-wrapper-<%= item.id %>" class="item-wrapper">
+        <i class="far fa-circle"></i>
         <%= item.item_name %>
         <div data-id="<%= item.id %>" class="icon-group-item">
           <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
