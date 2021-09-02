@@ -30,12 +30,14 @@
    <% category.items.each do |item| %>
     <div class="item-input">
       <i class="far fa-circle"></i>
-      <div id="item-wrapper-<%= item.id %>">
-        <%= item.item_name %>
-        <div data-id="<%= item.id %>" class="icon-group-item">
-          <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
-          <a id="edit-item-<%= item.id %>" class="fas fa-pen"></a>
-        </div>   
+      <div class="item-wrapper">
+        <div id="item-wrapper-<%= item.id %>">
+          <%= item.item_name %>
+          <div data-id="<%= item.id %>" class="icon-group-item">
+            <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
+            <a id="edit-item-<%= item.id %>" class="fas fa-pen"></a>
+          </div>   
+        </div>
       </div>
 
       <div id="edit-form-<%= item.id %>" class="hidden">

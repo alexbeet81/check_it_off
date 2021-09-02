@@ -44,9 +44,18 @@ const initShow = () => {
     const editItemSelector = document.querySelector(`#edit-item-${id}`)
     const editFormSelector = document.querySelector(`#edit-form-${id}`)
     const itemWrapperSelector = document.querySelector(`#item-wrapper-${id}`)
+    const itemWrapperClassSelector = document.querySelectorAll(".item-wrapper")
+    
+    itemWrapperClassSelector.forEach((e) => {
+      console.log(e.classList)
+    })
     
     editItemSelector.addEventListener('click', (e) => {
       // resets everything
+      iconGroupItemSelector.forEach(e => {
+        // console.log(e)
+        // console.log(itemWrapperSelector)
+      })
 
       toggleClass(editItemSelector)
       toggleClass(editFormSelector)
@@ -62,8 +71,6 @@ const initShow = () => {
     const addAnotherItemSelector = document.querySelector(`#addItem-${id}`)
     const addItemSelector = document.querySelector(`#submit-item-${id}`)
     const inputBoxSelector = document.querySelector('.input-box')
-
-    console.log(addItemSelector)
 
     addAnotherItemSelector.addEventListener('click', (e) => {
       // addAnotherItemSelector.classList.toggle("hidden")
