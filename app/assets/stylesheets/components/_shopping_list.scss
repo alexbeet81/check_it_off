@@ -1,0 +1,12 @@
+.shopping-container {
+  display: flex;
+  flex-direction: column;
+  justify-self: content;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+}

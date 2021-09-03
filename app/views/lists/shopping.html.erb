@@ -22,5 +22,8 @@
     </div>
 <% end  %>
 
-<%= link_to "edit list", list_path(@list), class:"btn-long-half" %>
+<div class="button-container">
+  <%= link_to "edit list", list_path(@list), class:"btn-long-half" %>
+  <%= link_to "done", lists_path(@lists), class:"btn-long-half ml-2"  %>
+</div>
 </div>
