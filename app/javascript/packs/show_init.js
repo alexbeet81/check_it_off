@@ -18,12 +18,14 @@ const initShow = () => {
   //  userAnswers.forEach(e => e.classList.toggle("hidden"))
   // }
 
+
   // const hideItemBtn = document.querySelectorAll(".hide-stuff")
   // hideItemBtn.forEach((btn) => {
   //   btn.addEventListener('click', (e) => {
   //     add()
   //   })
   // })
+
 
   // const editFormBtn = document.querySelectorAll(".hide-edit")
   // editFormBtn.forEach((btn) => {
@@ -32,6 +34,7 @@ const initShow = () => {
   //     hideShowAddItem()
   //   })
   // })
+
 
   const toggleClass = (data) => {
     return data.classList.toggle("hidden")
@@ -92,3 +95,5 @@ const initShow = () => {
 }
 
 export { initShow };
+
+// if the data is
