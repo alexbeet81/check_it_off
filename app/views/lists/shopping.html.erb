@@ -1,24 +1,34 @@
 <%= render 'shared/navbar' %>
+<div class="shopping-container">
 <h1>
     <%= @list.name %>
 </h1>
 <% @categories.each do |category| %>
-    <li>
-        category: <%= category.category_name %>
-    </li>
-    <div>
+    <h2 class="shopping-category"><%= category.category_name %></h2>
+    <div class="item-shopping">
         <% category.items.each do |item| %>
-            <li>
-                item: <%= item.item_name %>
-            </li>
-            <button type="button">select this item</button>
+        <div class="cat-item-cont">
+          <div class="item-list">
+            <i class="far fa-circle"></i>
+              <%= item.item_name %>
+          </div>
+          <div>
+            <button type="button">select</button>
+          </div>
+          <div class="condition-selection">
             <% if item.item_selected %>
-                <p>SELECTED!!!</p>
+              <p>SELECTED!!!</p>
             <% else %>
                 <p>NOT SELECTED!!!</p>
             <% end %>
+          </div>
+        </div>
         <% end %>
     </div>
 <% end  %>
 
-<%= link_to "Edit list", list_path(@list) %>
+<div class="button-container">
+  <%= link_to "edit list", list_path(@list), class:"btn-long-half" %>
+  <%= link_to "done", lists_path(@lists), class:"btn-long-half ml-2"  %>
+</div>
+</div>

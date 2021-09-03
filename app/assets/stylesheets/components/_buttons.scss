@@ -84,3 +84,22 @@
   font-size: 24px;
 }
 
+.btn-long-half {
+  width: 176px;
+  height:40px;
+  background: #346582;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  transition: background 0.3s ease;
+  color: #FFFFFF;
+  border-radius: 4px;
+  text-align:center;
+  position: sticky;
+  bottom: 16px;
+
+}
+
+.btn-long-half:hover{
+  background: #21455B;
+  color: #FFFFFF;
+}
