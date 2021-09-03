@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 <br><br><br>
 <div class="category-container">
-  <button type="button" class="btn-long list-button-flex " data-toggle="modal" data-target="#addCategoryModal">
+  <button type="button" id="modalBtn" class="btn-long list-button-flex ">
     <i class="fas fa-plus"></i>
     <h2>category</h2>
   </button>
@@ -72,18 +72,10 @@
   <div>
     <%= link_to "go shopping", list_shopping_path(@list), class: 'btn btn-long-shop'%>
   </div>
-
 </div>
 
-<button id="modalBtn" class="classModalBtn">Click Here</button>
-
-
-<div id="addCategoryModal" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content modal-content-category">
-      <div class="modal-body modal-body-category">
-        <%= render 'shared/categoryselect' %>
-      </div>
-    </div>
+<div id="categoryModal" class="classCategoryModal">
+  <div class="category-modal-content">
+    <%= render 'shared/categoryselect' %>
   </div>
 </div>
