@@ -42,10 +42,12 @@
 
 
       <div id="edit-form-<%= item.id %>" class="hidden">
-        <%= simple_form_for(item) do |f| %>
-          <%= f.input :item_name, label: false %>
-          <%= f.submit "edit item", class:"hide-edit" %>
-        <% end %>
+        <div class="flexbox-class">
+          <%= simple_form_for(item) do |f| %>
+           <%= f.input :item_name, label: false %>
+           <%= f.submit "edit item", class:"hide-edit" %>
+          <% end %>
+        </div>
       </div>
     </div>
       <% end %>
@@ -56,10 +58,13 @@
         </p>
         </div>
       <div class="input-box hidden">
-        <%= simple_form_for([@list, category, @item]) do |f| %>
-        <%= f.input :item_name, label: false, placeholder: "item name" %>
-        <%= f.submit "add item", id:"submit-item-#{category.id}" %>
-      <% end %>
+        <div class="add-form">
+          <%= simple_form_for([@list, category, @item]) do |f| %>
+            <%= f.input :item_name, label: false, placeholder: "item name" %>
+            <%= f.submit "add item", id:"submit-item-#{category.id}", class:"add-item-form" %>
+          <% end %>
+        </div>
+
       </div>
 
 <% end %>
