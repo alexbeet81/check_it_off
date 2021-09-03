@@ -1,5 +1,6 @@
 const inItCreateCategory = () => {
-  console.log('hello from inItCreateCategory')
+  // const meatFish = document.
+
 };
 
 export default inItCreateCategory;

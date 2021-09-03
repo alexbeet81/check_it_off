@@ -5,21 +5,7 @@
   grid-gap: 4px;
 }
 
-.meat_fish,
-.fruit_veg,
-.snacks,
-.soft_drinks,
-.beer_wine,
-.household,
-.health,
-.beauty,
-.bakery,
-.deli,
-.frozen,
-.petfood,
-.toys,
-.clothes,
-.stationary {
+.category_card {
   padding: 8px;
   display: flex;
   flex-direction: column;
@@ -38,63 +24,63 @@
   }
 }
 
-.meat_fish {
+#meat_fish {
   background-color: #d8315b;
 }
 
-.fruit_veg {
+#fruit_veg {
   background-color: #50723c;
 }
 
-.snacks {
+#snacks {
   background-color: #f2a540;
 }
 
-.soft_drinks {
+#soft_drinks {
   background-color: #8c271e;
 }
 
-.beer_wine {
+#beer_wine {
   background-color: #eb6c6c;
 }
 
-.household {
+#household {
 background-color: #07908f;
 }
 
-.health {
+#health {
   background-color: #485696;
 }
 
-.beauty {
+#beauty {
   background-color: #c08497;
 }
 
-.bakery {
+#bakery {
   background-color: #f78e69;
 }
 
-.deli {
+#deli {
   background-color: #ffa69e;
 }
 
-.frozen {
+#frozen {
   background-color: #9bbdf9;
 }
 
-.petfood {
+#petfood {
   background-color: #7b2d26;
 }
 
-.toys {
+#toys {
   background-color: #e8aa15;
 }
 
-.clothes {
+#clothes {
   background-color: #e26d5a; 
 }
 
-.stationary {
+#stationary {
   background-color: #f29559;
 }
 
