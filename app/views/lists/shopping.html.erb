@@ -4,20 +4,21 @@
     <%= @list.name %>
 </h1>
 <% @categories.each do |category| %>
-    <li>
-        category: <%= category.category_name %>
-    </li>
-    <div>
+        <h2 class="shopping-category"><%= category.category_name %></h2>
+    <div class="item-list">
         <% category.items.each do |item| %>
-            <li>
+            <div clas="item-list">
                 item: <%= item.item_name %>
-            </li>
-            <button type="button">select this item</button>
+            </div>
+            <div>
+            <button type="button">select</button>
             <% if item.item_selected %>
                 <p>SELECTED!!!</p>
             <% else %>
                 <p>NOT SELECTED!!!</p>
             <% end %>
+
+            </div>
         <% end %>
     </div>
 <% end  %>

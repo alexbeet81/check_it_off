@@ -3,10 +3,28 @@
   flex-direction: column;
   justify-self: content;
   align-items: center;
+  h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  margin-top: 8px;
+  }
+}
+.shopping-category {
+  background-color: #F29559;
+  color: white;
+  width: 346px;
+  height:32px;
+  align-items: center;
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
   margin: 8px;
+}
+
+.item-list {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
 }
