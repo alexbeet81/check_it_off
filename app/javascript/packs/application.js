@@ -25,10 +25,12 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initShow } from './show_init';
 import inItCategoryModal from './init_cat_modal';
+import inItCreateCategory from './init_create_category';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initShow();
   inItCategoryModal();
+  inItCreateCategory();
 });
