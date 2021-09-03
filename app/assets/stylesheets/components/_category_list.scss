@@ -115,8 +115,20 @@
   top: 56px;
   padding-top: 4px;
   padding-bottom: 4px;
-  .add-item {
+}
+
+.add-form {
+  display:flex;
+  justify-content:space-between;
+  .add-item-form {
+    margin-bottom: 8px;
     position: relative;
-    right: -240px;
+    top:-50px;
+    right: -125px;
+  }
+  .form-control {
+    position:relative;
+    left: -75px;
   }
 }
+
