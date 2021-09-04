@@ -19,7 +19,7 @@ puts "creating seed lists...."
   list = List.create!(name: Faker::Food.fruits, user_id: user.id)
   puts "list #{list.name} ready!"
     2.times do
-    category = Category.create!(category_name: Faker::Food.ingredient, list_id: list.id)
+    category = Category.create!(category_name: Faker::Food.ingredient, list_id: list.id, category_color: '#f29559')
     puts "category #{category.category_name} ready!"
       4.times do
         item = Item.create!(item_name: Faker::Food.vegetables, category_id: category.id)

@@ -44,7 +44,7 @@ before_action :set_category, except: [:create]
   end
 
   def category_params    
-    params.require(:category).permit(:category_name, :list_id)
+    params.require(:category).permit(:category_name, :list_id, :category_color)
     # params.require(:category).permit(:category_name, :list_id) if params[:category].present?
   end
 

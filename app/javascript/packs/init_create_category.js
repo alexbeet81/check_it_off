@@ -27,9 +27,10 @@ const inItCreateCategory = () => {
   // conditional to stop error when not on list#show page
   if (meatFish != null) {
     const id = getListId.dataset.id;
+    // console.log('heererer')
 
     meatFish.addEventListener('click', (e) => {
-      apiCall('Meat & Fish', id)
+      apiCall('Meat & Fish', '#d8315b' ,id)
       categoryModal.style.display = 'none';
     })
 
@@ -92,9 +93,10 @@ const inItCreateCategory = () => {
     })
   }
 
-  const apiCall = (name, id) => {
+  const apiCall = (name, color, id) => {
     axios.post(`http://localhost:3000/api/v1/lists/${id}/categories`, {
       category_name: name,
+      category_color: color,
       list_id: id
     })
   };
