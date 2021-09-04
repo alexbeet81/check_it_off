@@ -3,30 +3,17 @@ import axios from 'axios';
 const inItCreateCategory = () => {
   const categoryCards = document.querySelectorAll('.category_card');
 
-  console.log(categoryCards[1])
-
   // find the id of the current list.
   const getListId = document.getElementById('data-id');
-  
-  // get each element and save into variable
-  // const meatFish = document.getElementById('meat_fish');
-  // const fruitVeg = document.getElementById('fruit_veg');
-  // const snacks = document.getElementById('snacks');
-  // const softDrinks = document.getElementById('soft_drinks');
-  // const beerWine = document.getElementById('beer_wine');
-  // const household = document.getElementById('household');
-  // const health = document.getElementById('health');
-  // const beauty = document.getElementById('beauty');
-  // const bakery = document.getElementById('bakery');
-  // const deli = document.getElementById('deli');
-  // const frozen = document.getElementById('frozen');
-  // const petfood = document.getElementById('petfood');
-  // const toys = document.getElementById('toys');
-  // const clothes = document.getElementById('clothes');
-  // const stationary = document.getElementById('stationary');
 
   // get the category modal and set display to none after api call
   const categoryModal = document.getElementById('categoryModal');
+
+  // categoryCards.forEach( categoryCard => {
+  //   categoryCard.addEventListener('click', e => {
+  //     console.log(e.path[1].id)
+  //   })
+  // })
 
   // conditional to stop error when not on list#show page
   if (categoryCards != null) {
