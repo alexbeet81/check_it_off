@@ -6,9 +6,11 @@ const inItCategoryModal = () => {
   const modalBtn = document.getElementById('modalBtn');
 
   // listen for the click on + category and open the modal
-  modalBtn.addEventListener('click', (e) => {
-    categoryModal.style.display = 'block';
-  });
+  if (modalBtn != null){
+    modalBtn.addEventListener('click', (e) => {
+      categoryModal.style.display = 'block';
+    });
+  }
 
   // if the click is equal to the area outside of the
   // content the modal will close
