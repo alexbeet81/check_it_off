@@ -4,14 +4,14 @@ before_action :set_category, except: [:create]
   def create
     @category = Category.new(category_params)
 
-    @category.list = @list
+    # @category.list = @list
 
     # gives category if it has no name.
     @category.no_name
 
     authorize @category
 
-    if @category.save
+    if @category.save!
       redirect_to api_v1_lists_path
     else
       render_error
@@ -43,9 +43,7 @@ before_action :set_category, except: [:create]
     authorize @category
   end
 
-  def category_params
-    binding.pry
-    
+  def category_params    
     params.require(:category).permit(:category_name, :list_id)
     # params.require(:category).permit(:category_name, :list_id) if params[:category].present?
   end

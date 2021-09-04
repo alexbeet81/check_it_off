@@ -36,9 +36,7 @@ class CategoriesController < ApplicationController
 
   private
 
-  def category_params
-    binding.pry
-    
+  def category_params    
     params.require(:category).permit(:category_name, :list_id)
   end
 
