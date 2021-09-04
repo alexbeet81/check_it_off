@@ -30,7 +30,7 @@ const inItCreateCategory = () => {
     // console.log('heererer')
 
     meatFish.addEventListener('click', (e) => {
-      apiCall('Meat & Fish', '#d8315b' ,id)
+      apiCall('Meat & Fish', '#d8315b', '#ffecf0' ,id)
       categoryModal.style.display = 'none';
     })
 
@@ -93,10 +93,11 @@ const inItCreateCategory = () => {
     })
   }
 
-  const apiCall = (name, color, id) => {
+  const apiCall = (name, colorOne, colorTwo, id) => {
     axios.post(`http://localhost:3000/api/v1/lists/${id}/categories`, {
       category_name: name,
-      category_color: color,
+      category_color: colorOne,
+      category_icon: colorTwo,
       list_id: id
     })
   };

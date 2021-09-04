@@ -29,7 +29,7 @@
   </div>
 
    <% category.items.each do |item| %>
-    <div class="item-input" style="background-color: blue;">
+    <div class="item-input" style="background-color:<%= category.category_icon %>;">
       <div id="item-wrapper-<%= item.id %>">
           <div class="item-stuff">
             <i class="far fa-circle"></i>
