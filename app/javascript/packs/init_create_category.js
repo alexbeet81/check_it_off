@@ -27,11 +27,11 @@ const inItCreateCategory = () => {
   // conditional to stop error when not on list#show page
   if (meatFish != null) {
     const id = getListId.dataset.id;
-    // console.log('heererer')
 
     meatFish.addEventListener('click', (e) => {
       apiCall('Meat & Fish', '#d8315b', '#ffecf0' ,id)
       categoryModal.style.display = 'none';
+      // location.reload();
     })
 
     fruitVeg.addEventListener('click', (e) => {
