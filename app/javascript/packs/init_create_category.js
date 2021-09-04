@@ -3,13 +3,10 @@ import axios from 'axios';
 const inItCreateCategory = () => {
   // find the id of the current list.
   const getListId = document.getElementById('data-id');
-  const id = getListId.dataset.id;
-
+  
+  // get each element and save into variable
   const meatFish = document.getElementById('meat_fish');
   const fruitVeg = document.getElementById('fruit_veg');
-
-  console.log(fruitVeg)
-
   const snacks = document.getElementById('snacks');
   const softDrinks = document.getElementById('soft_drinks');
   const beerWine = document.getElementById('beer_wine');
@@ -24,16 +21,22 @@ const inItCreateCategory = () => {
   const clothes = document.getElementById('clothes');
   const stationary = document.getElementById('stationary');
 
+  // get the category modal and set display to none after api call
   const categoryModal = document.getElementById('categoryModal');
 
+  // conditional to stop error when not on list#show page
   if (meatFish != null) {
+    const id = getListId.dataset.id;
+
     meatFish.addEventListener('click', (e) => {
-      apiCall('Meat & Fish!', id)
+      apiCall('Meat & Fish', id)
       categoryModal.style.display = 'none';
     })
 
     fruitVeg.addEventListener('click', (e) => {
-      console.log(e)
+      console.log("test")
+      // apiCall('Fruit & Veg', id)
+      // categoryModal.style.display = 'none';
     })
 
     snacks.addEventListener('click', (e) => {
