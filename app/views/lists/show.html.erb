@@ -34,10 +34,10 @@
             <i class="far fa-circle"></i>
             <%= item.item_name %>
             <div data-id="<%= item.id %>" class="icon-group-item">
-            <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
-            <a id="edit-item-<%= item.id %>" class="fas fa-pen"></a>
+              <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
+              <a id="edit-item-<%= item.id %>" class="fas fa-pen"></a>
+            </div>
           </div>
-        </div>
       </div>
 
 
@@ -53,11 +53,11 @@
       <% end %>
      <div id="addItem-<%= category.id %>" data-id="<%= category.id %>" class="item-add">
         <p>
-        <i class="fas fa-plus"> </i>
-        add another item
+          <i class="fas fa-plus"></i>
+          add another item
         </p>
-        </div>
-      <div class="input-box hidden">
+      </div>
+      <div class="input-box hidden" id="input-box-<%= category.id %>">
         <div class="add-form">
           <%= simple_form_for([@list, category, @item]) do |f| %>
             <%= f.input :item_name, label: false, placeholder: "item name" %>
