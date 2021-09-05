@@ -36,3 +36,15 @@
   margin: 8px;
   align-items:center;
 }
+
+.category-item-container.selected {
+  display: flex;
+  justify-content:space-between;
+  width: 338px;
+  height: 32px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #FFE9D9;
+  margin: 8px;
+  align-items:center;
+}

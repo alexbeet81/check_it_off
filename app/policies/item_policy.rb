@@ -3,15 +3,17 @@ class ItemPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-    def create
+    
+    def create?
       record.user == user
     end
 
-    def update
-      record.user == user
+    def update?
+      true
+      # record.user == user
     end
 
-    def destroy
+    def destroy?
       record.user == user
     end
   end

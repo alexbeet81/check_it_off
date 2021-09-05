@@ -8,14 +8,14 @@
     <div class="item-shopping">
       <% category.items.each do |item| %>
         <% if item.item_selected %>
-          <div class="category-item-container" style="background-color: #f3f3f3">
+          <div class="category-item-container-selected" id="item-id-<%= item.id %>" data-id="<%= item.id %>" style="background-color: #f3f3f3">
             <div class="item-list">
               <i class="far fa-check-circle"></i>
               <%= item.item_name %>
             </div>
           </div>    
         <% else %>
-          <div class="category-item-container" style="background-color: <%= category.category_icon %>">
+          <div class="category-item-container" id="item-id-<%= item.id %>" data-id="<%= item.id %>" style="background-color: <%= category.category_icon %>">
             <div class="item-list">
               <i class="far fa-circle"></i>
               <%= item.item_name %>
