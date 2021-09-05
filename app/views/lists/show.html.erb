@@ -1,13 +1,14 @@
 <%= render 'shared/navbar' %>
 <br><br><br>
+<div id="data-id" data-id="<%= @list.id %>"></div>
 <div class="category-container">
-  <button type="button" class="btn-long list-button-flex " data-toggle="modal" data-target="#addCategoryModal">
+  <button type="button" id="modalBtn" class="btn-long list-button-flex ">
     <i class="fas fa-plus"></i>
     <h2>category</h2>
   </button>
 
   <% @list.categories.each do |category| %>
-  <div class="category-item">
+  <div class="category-item" style="background-color:<%= category.category_color %>;">
     <div class="category-title">
       <h3> <%= category.category_name %> </h3>
     </div>
@@ -21,14 +22,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content modal-content-category">
         <div class="modal-body modal-body-category">
-          <%= render 'shared/categoryselect' %>
         </div>
       </div>
     </div>
   </div>
 
    <% category.items.each do |item| %>
-    <div class="item-input">
+    <div class="item-input" style="background-color:<%= category.category_icon %>;">
       <div id="item-wrapper-<%= item.id %>">
           <div class="item-stuff">
             <i class="far fa-circle"></i>
@@ -72,14 +72,70 @@
   <div>
     <%= link_to "go shopping", list_shopping_path(@list), class: 'btn btn-long-shop'%>
   </div>
-
 </div>
 
-<div id="addCategoryModal" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content modal-content-category">
-      <div class="modal-body modal-body-category">
-        <%= render 'shared/categoryselect' %>
+<div id="categoryModal" class="classCategoryModal">
+  <div class="category-modal-content">
+    <div class="category_cards">
+      <div class="category_card" id="meat_fish">
+        <i class="fas fa-drumstick-bite"></i>
+        <h1>meat & fish</h1>
+      </div>
+      <div class="category_card" id="fruit_veg">
+        <i class="fas fa-seedling"></i>
+        <h1>fruit & veg</h1>
+      </div>
+      <div class="category_card" id="snacks">
+        <i class="fas fa-cookie-bite"></i>
+        <h1>snacks</h1>
+      </div>
+      <div class="category_card" id="soft_drinks">
+        <i class="fas fa-glass-whiskey"></i>
+        <h1>soft drinks</h1>
+      </div>
+      <div class="category_card" id="beer_wine">
+        <i class="fas fa-wine-bottle"></i>
+        <h1>beer & wine</h1>
+      </div>
+      <div class="category_card" id="household">
+        <i class="fas fa-home"></i>
+        <h1>household</h1>
+      </div>
+      <div class="category_card" id="health">
+        <i class="fas fa-heart"></i>
+        <h1>health</h1>
+      </div>
+      <div class="category_card" id="beauty">
+        <i class="fas fa-pump-soap"></i>
+        <h1>beauty</h1>
+      </div>
+      <div class="category_card" id="bakery">
+        <i class="fas fa-bread-slice"></i>
+        <h1>bakery</h1>
+      </div>
+      <div class="category_card" id="deli">
+        <i class="fas fa-cheese"></i>
+        <h1>deli</h1>
+      </div>
+      <div class="category_card" id="frozen">
+        <i class="far fa-snowflake"></i>
+        <h1>frozen</h1>
+      </div>
+      <div class="category_card" id="petfood">
+        <i class="fas fa-paw"></i>
+        <h1>petfood</h1>
+      </div>
+      <div class="category_card" id="toys">
+        <i class="fas fa-gamepad"></i>
+        <h1>toys</h1>
+      </div>
+      <div class="category_card" id="clothes">
+        <i class="fas fa-tshirt"></i>
+        <h1>clothes</h1>
+      </div>
+      <div class="category_card" id="stationary">
+        <i class="fas fa-paperclip"></i>
+        <h1>stationary</h1>
       </div>
     </div>
   </div>

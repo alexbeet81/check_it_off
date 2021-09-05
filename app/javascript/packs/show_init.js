@@ -88,6 +88,8 @@ const initShow = () => {
     })
 
     addItemSelector.addEventListener('click', (e) => {
+      console.log(addItemSelector)
+      console.log(e)
       toggleClass(addItemSelector)
       toggleClass(addAnotherItemSelector)
     })
