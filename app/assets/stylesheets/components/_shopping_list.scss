@@ -13,6 +13,7 @@
 }
 .shopping-category {
   background-color: #F29559;
+  border-radius: 4px;
   color: white;
   width: 346px;
   height:32px;
@@ -24,7 +25,7 @@
   justify-content: space-between;
   margin: 8px;
 }
-.cat-item-cont {
+.category-item-container {
   display: flex;
   justify-content:space-between;
   width: 338px;

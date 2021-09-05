@@ -4,25 +4,24 @@
       <%= @list.name %>
   </h1>
   <% @categories.each do |category| %>
-    <h2 class="shopping-category"><%= category.category_name %></h2>
+    <h2 class="shopping-category" style="background-color:<%= category.category_color %>;"><%= category.category_name %></h2>
     <div class="item-shopping">
       <% category.items.each do |item| %>
-        <div class="cat-item-cont">
-          <div class="item-list">
-            <i class="far fa-circle"></i>
-            <%= item.item_name %>
-          </div>
-          <div>
-            <button type="button">select</button>
-          </div>
-          <div class="condition-selection">
-            <% if item.item_selected %>
-              <p>SELECTED!!!</p>
-            <% else %>
-              <p>NOT SELECTED!!!</p>
-            <% end %>
-          </div>
-        </div>
+        <% if item.item_selected %>
+          <div class="category-item-container" style="background-color: #f3f3f3">
+            <div class="item-list">
+              <i class="far fa-check-circle"></i>
+              <%= item.item_name %>
+            </div>
+          </div>    
+        <% else %>
+          <div class="category-item-container" style="background-color: <%= category.category_icon %>">
+            <div class="item-list">
+              <i class="far fa-circle"></i>
+              <%= item.item_name %>
+            </div>
+          </div>     
+        <% end %>
       <% end %>
     </div>
   <% end  %>
