@@ -14,9 +14,9 @@ const inItShopping = () => {
     itemIdSelector.addEventListener('click', e => {
       console.log(e);
       // api call to change the value of item_seleceted
-      axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
-        item_selected: false
-      })
+      // axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
+      //   // item_selected: false
+      // })
     })
   })
   // itterate over the div

@@ -16,6 +16,7 @@
           </div>    
         <% else %>
           <div class="category-item-container" id="item-id-<%= item.id %>" data-id="<%= item.id %>" style="background-color: <%= category.category_icon %>">
+            <% item.toggle_item_selected %>
             <div class="item-list">
               <i class="far fa-circle"></i>
               <%= item.item_name %>
