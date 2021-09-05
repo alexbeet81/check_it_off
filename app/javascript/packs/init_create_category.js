@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const inItCreateCategory = () => {
-  
+
   const categoryCards = document.querySelectorAll('.category_card');
 
   // find the id of the current list.
@@ -17,7 +17,7 @@ const inItCreateCategory = () => {
   // })
 
   // conditional to stop error when not on list#show page
-  if (categoryCards != null) {
+  if (categoryCards.length > 1) {
     const id = getListId.dataset.id;
 
     categoryCards[0].addEventListener('click', (e) => {
@@ -95,6 +95,7 @@ const inItCreateCategory = () => {
       categoryModal.style.display = 'none';
     })
   }
+
 
   const apiCall = (name, colorOne, colorTwo, id) => {
     axios.post(`http://localhost:3000/api/v1/lists/${id}/categories`, {
