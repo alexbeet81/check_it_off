@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const inItCreateCategory = () => {
+  
   const categoryCards = document.querySelectorAll('.category_card');
 
   // find the id of the current list.
@@ -11,7 +12,7 @@ const inItCreateCategory = () => {
 
   // categoryCards.forEach( categoryCard => {
   //   categoryCard.addEventListener('click', e => {
-  //     console.log(e.path[1].id)
+  //     console.log(e.srcElement)
   //   })
   // })
 
@@ -22,14 +23,11 @@ const inItCreateCategory = () => {
     categoryCards[0].addEventListener('click', (e) => {
       apiCall('Meat & Fish', '#d8315b', '#ffecf0', id)
       categoryModal.style.display = 'none';
-      // location.reload();
     })
 
     categoryCards[1].addEventListener('click', (e) => {
       apiCall('Fruit & Veg', '#50723c', '#e1ffd0', id)
       categoryModal.style.display = 'none';
-      // apiCall('Fruit & Veg', id)
-      // categoryModal.style.display = 'none';
     })
 
     categoryCards[2].addEventListener('click', (e) => {
