@@ -1,16 +1,16 @@
 <%= render 'shared/navbar' %>
 <div class="shopping-container">
-<h1>
-    <%= @list.name %>
-</h1>
-<% @categories.each do |category| %>
+  <h1>
+      <%= @list.name %>
+  </h1>
+  <% @categories.each do |category| %>
     <h2 class="shopping-category"><%= category.category_name %></h2>
     <div class="item-shopping">
-        <% category.items.each do |item| %>
+      <% category.items.each do |item| %>
         <div class="cat-item-cont">
           <div class="item-list">
             <i class="far fa-circle"></i>
-              <%= item.item_name %>
+            <%= item.item_name %>
           </div>
           <div>
             <button type="button">select</button>
@@ -19,16 +19,16 @@
             <% if item.item_selected %>
               <p>SELECTED!!!</p>
             <% else %>
-                <p>NOT SELECTED!!!</p>
+              <p>NOT SELECTED!!!</p>
             <% end %>
           </div>
         </div>
-        <% end %>
+      <% end %>
     </div>
-<% end  %>
+  <% end  %>
 
-<div class="button-container">
-  <%= link_to "edit list", list_path(@list), class:"btn-long-half" %>
-  <%= link_to "done", lists_path(@lists), class:"btn-long-half ml-2"  %>
-</div>
+  <div class="button-container">
+    <%= link_to "edit list", list_path(@list), class:"btn-long-half" %>
+    <%= link_to "done", lists_path(@lists), class:"btn-long-half ml-2"  %>
+  </div>
 </div>
