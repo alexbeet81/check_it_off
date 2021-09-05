@@ -26,11 +26,13 @@ import "bootstrap";
 import { initShow } from './show_init';
 import inItCategoryModal from './init_cat_modal';
 import inItCreateCategory from './init_create_category';
+import inItShow from './init_show';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initShow();
+  // initShow();
+  inItShow();
   inItCategoryModal();
   inItCreateCategory();
 });
