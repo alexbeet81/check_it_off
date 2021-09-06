@@ -2,7 +2,8 @@
 <br><br><br>
 <div id="data-id" data-id="<%= @list.id %>"></div>
 <div class="category-container">
-  <button type="button" id="modalBtn" class="btn-long list-button-flex ">
+  <div class="margin-container-scroll">
+      <button type="button" id="modalBtn" class="btn-long list-button-flex ">
     <i class="fas fa-plus"></i>
     <h2>category</h2>
   </button>
@@ -68,10 +69,13 @@
       </div>
 
 <% end %>
-  <div>
-    <br>
+  </div>
+
+
+  <div >
     <%= link_to "go shopping", list_shopping_path(@list), class: 'btn btn-long-shop'%>
   </div>
+
 </div>
 
 <div id="categoryModal" class="classCategoryModal">
