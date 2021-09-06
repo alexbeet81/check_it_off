@@ -32,7 +32,7 @@
       <div id="item-wrapper-<%= item.id %>">
           <div class="item-stuff">
             <i class="far fa-circle"></i>
-            <%= item.item_name %>
+            <p> <%= item.item_name %> </p>
             <div data-id="<%= item.id %>" class="icon-group-item">
               <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
               <a id="edit-item-<%= item.id %>" class="fas fa-pen"></a>
