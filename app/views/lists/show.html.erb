@@ -2,7 +2,8 @@
 <br><br><br>
 <div id="data-id" data-id="<%= @list.id %>"></div>
 <div class="category-container">
-  <button type="button" id="modalBtn" class="btn-long list-button-flex ">
+  <div class="margin-container-scroll">
+      <button type="button" id="modalBtn" class="btn-long list-button-flex ">
     <i class="fas fa-plus"></i>
     <h2>category</h2>
   </button>
@@ -14,25 +15,25 @@
     </div>
     <div class="icon-group-cat">
       <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
-      <a type="button" class="fas fa-pen" data-toggle="modal" data-target="#editCategoryModal<%= category.id %>"></a>
-    </div>
+<!--       <a type="button" class="fas fa-pen" data-toggle="modal" data-target="#editCategoryModal<%= category.id %>"></a>
+ -->    </div>
   </div>
 
-  <div id="editCategoryModal<%= category.id  %>" class="modal fade" tabindex="-1" role="dialog">
+<!--   <div id="editCategoryModal<%= category.id  %>" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content modal-content-category">
         <div class="modal-body modal-body-category">
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
    <% category.items.each do |item| %>
     <div class="item-input" style="background-color:<%= category.category_icon %>;">
       <div id="item-wrapper-<%= item.id %>">
           <div class="item-stuff">
             <i class="far fa-circle"></i>
-            <%= item.item_name %>
+            <p> <%= item.item_name %> </p>
             <div data-id="<%= item.id %>" class="icon-group-item">
               <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
               <a id="edit-item-<%= item.id %>" class="fas fa-pen"></a>
@@ -68,10 +69,13 @@
       </div>
 
 <% end %>
+  </div>
 
-  <div>
+
+  <div >
     <%= link_to "go shopping", list_shopping_path(@list), class: 'btn btn-long-shop'%>
   </div>
+
 </div>
 
 <div id="categoryModal" class="classCategoryModal">
