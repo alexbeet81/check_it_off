@@ -1,6 +1,7 @@
 class Api::V1::ItemsController < Api::V1::BaseController
   before_action :set_item, only: [:update, :destroy]
   before_action :set_category, only: [:create]
+  # skip_before_action :authenticate_user!
 
 def create
   @item = Item.new(item_params)
@@ -21,17 +22,16 @@ def create
 end
 
 def update
+  # authorize @item
+  @item.toggle_item_selected
 
-  @item.update
+  # binding.pry
 
-  authorize @item
-
-  if @item.save
+  if @item.update
     redirect_to api_v1_list_path
   else
-  render_error
- end
-
+    render_error
+  end
 end
 
 def destroy
@@ -44,7 +44,7 @@ private
 
 def set_item
   @item = Item.find(params[:id])
-  authorize @item
+  # authorize @item
 end
 
 def set_category

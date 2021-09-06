@@ -27,12 +27,14 @@ import { initShow } from './show_init';
 import inItCategoryModal from './init_cat_modal';
 import inItCreateCategory from './init_create_category';
 import inItShow from './init_show';
+import inItShopping from './init_shopping';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // initShow();
   inItShow();
+  inItShopping();
   inItCategoryModal();
   inItCreateCategory();
 });
