@@ -14,18 +14,18 @@
     </div>
     <div class="icon-group-cat">
       <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
-      <a type="button" class="fas fa-pen" data-toggle="modal" data-target="#editCategoryModal<%= category.id %>"></a>
-    </div>
+<!--       <a type="button" class="fas fa-pen" data-toggle="modal" data-target="#editCategoryModal<%= category.id %>"></a>
+ -->    </div>
   </div>
 
-  <div id="editCategoryModal<%= category.id  %>" class="modal fade" tabindex="-1" role="dialog">
+<!--   <div id="editCategoryModal<%= category.id  %>" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content modal-content-category">
         <div class="modal-body modal-body-category">
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
    <% category.items.each do |item| %>
     <div class="item-input" style="background-color:<%= category.category_icon %>;">
