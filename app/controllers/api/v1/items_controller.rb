@@ -28,7 +28,7 @@ def update
   # binding.pry
 
   if @item.update(item_params)
-    redirect_to api_v1_lists_path
+    redirect_to api_v1_list_path
   else
     render_error
   end
@@ -53,7 +53,8 @@ def set_category
 end
 
 def item_params
-  params.require(:item).permit(:item_name, :item_selected, :unavailable, :category_id)
+  # binding.pry
+  params[:category].present? ? params.require(:item).permit(:item_name, :item_selected, :unavailable, :category_id) : {}
 end
 
 def render_error
