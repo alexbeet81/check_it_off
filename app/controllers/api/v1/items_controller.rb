@@ -27,8 +27,8 @@ def update
 
   # binding.pry
 
-  if @item.update!(item_params)
-    redirect_to api_v1_list_path
+  if @item.update(item_params)
+    redirect_to api_v1_lists_path
   else
     render_error
   end
