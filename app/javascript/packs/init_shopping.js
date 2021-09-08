@@ -26,7 +26,7 @@ const inItShopping = () => {
       
       // api call to toggle self.item_selected to true or false
       axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
-        item_selected: false
+        // item_selected: false
       })
 
       // toggles selected class on the div

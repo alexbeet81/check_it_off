@@ -36,7 +36,7 @@ def update
     puts "SAVED!!!"
     puts "SAVED!!!"
     puts "SAVED!!!"
-    redirect_to api_v1_item_path(@item)
+    redirect_to api_v1_lists_path
   else
     render_error
     puts "NOT SAVED!!!"

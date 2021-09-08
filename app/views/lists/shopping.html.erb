@@ -4,7 +4,8 @@
   <% @categories.each do |category| %>
     <h2 class="shopping-category" style="background-color:<%= category.category_color %>;"><%= category.category_name %></h2>
     <div class="item-shopping">
-      <% category.items.each do |item| %>
+    <% items_sorted = category.items.sort_by {|item| item.created_at } %>
+      <% items_sorted.each do |item| %>
 
         <div class="category-item-container" 
              id="item-id-<%= item.id %>" data-id="<%= item.id %>" 
