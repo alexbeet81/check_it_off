@@ -4,23 +4,21 @@
   <% @categories.each do |category| %>
     <h2 class="shopping-category" style="background-color:<%= category.category_color %>;"><%= category.category_name %></h2>
     <div class="item-shopping">
-      <% category.items.each do |item| %>
-        <% if item.item_selected %>
-          <div class="category-item-container-selected" id="item-id-<%= item.id %>" data-id="<%= item.id %>" style="background-color: #f3f3f3">
-            <div class="item-list">
-              <i class="far fa-check-circle"></i>
-              <%= item.item_name %>
-            </div>
-          </div>    
-        <% else %>
-          <div class="category-item-container" id="item-id-<%= item.id %>" data-id="<%= item.id %>" style="background-color: <%= category.category_icon %>">
-            <% item.toggle_item_selected %>
-            <div class="item-list">
-              <i class="far fa-circle"></i>
-              <%= item.item_name %>
-            </div>
-          </div>     
-        <% end %>
+    <% items_sorted = category.items.sort_by {|item| item.created_at } %>
+      <% items_sorted.each do |item| %>
+
+        <div class="category-item-container" 
+             id="item-id-<%= item.id %>" data-id="<%= item.id %>" 
+             data-color="<%= category.category_icon %>"
+             data-selected="<%= item.item_selected %>"
+             style="background-color: <%= category.category_icon %>">
+
+          <div class="item-list">
+            <i id="circle-<%= item.id %>" class="far fa-circle"></i>
+            <%= item.item_name %>
+          </div> 
+        </div>
+
       <% end %>
     </div>
   <% end  %>

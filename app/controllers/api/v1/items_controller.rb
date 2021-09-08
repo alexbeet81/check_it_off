@@ -2,7 +2,7 @@ class Api::V1::ItemsController < Api::V1::BaseController
   before_action :set_item, only: [:update, :destroy]
   before_action :set_category, only: [:create]
   # skip_before_action :authenticate_user!
-
+  
 def create
   @item = Item.new(item_params)
 
@@ -22,15 +22,29 @@ def create
 end
 
 def update
-  # authorize @item
+  authorize @item
+  # @list = @category.list
   @item.toggle_item_selected
 
   # binding.pry
 
-  if @item.update
-    redirect_to api_v1_list_path
+  if @item.update!(item_params)
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    redirect_to api_v1_lists_path
   else
     render_error
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
   end
 end
 
@@ -53,7 +67,8 @@ def set_category
 end
 
 def item_params
-  params.require(:item).permit(:item_name, :item_selected, :unavailable, :category_id)
+  # binding.pry
+  params[:category].present? ? params.require(:item).permit(:item_name, :item_selected, :unavailable, :category_id) : {}
 end
 
 def render_error
