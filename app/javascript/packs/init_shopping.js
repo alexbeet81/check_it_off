@@ -11,7 +11,8 @@ const inItShopping = () => {
 
     const itemIdSelector = document.getElementById(`item-id-${id}`)
     const fontAwesomeCircleSelector = document.getElementById(`circle-${id}`)
-    // set the initial state of the divs
+    
+    // set the initial state of the category-item-container
     if (selected === "false") {
       itemIdSelector.style.backgroundColor = color
     } else {
@@ -22,15 +23,19 @@ const inItShopping = () => {
     }
 
     itemIdSelector.addEventListener('click', e => {
-      // itemIdSelector.style.color = "#bfbfbf"
-      // itemIdSelector.style.backgroundColor = "#e0e0e0"
-      axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
-          // item_selected: false
-      })
       
+      // api call to toggle self.item_selected to true or false
+      axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
+        item_selected: false
+      })
+
+      // toggles selected class on the div
       itemIdSelector.classList.toggle('selected');
       fontAwesomeCircleSelector.classList.toggle('fa-circle')
       fontAwesomeCircleSelector.classList.toggle('fa-check-circle')
+      
+      // calls a function that checks if item is selected and then
+      // sets the background and other styles.
       toggleBackground(itemIdSelector);
     });
 
@@ -41,36 +46,6 @@ const inItShopping = () => {
         itemIdSelector.style.backgroundColor = "#e0e0e0"
       }
     };
-    // if (itemIdSelectedSelector === null) {
-    //   itemIdSelector.addEventListener('click', e => {
-        
-        
-    //     // api call to change the value of item_seleceted
-    //     // axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
-    //     //   // item_selected: false
-    //     // })
-    //     itemIdSelector.removeAttribute("style")
-    //     itemIdSelector.style.backgroundColor = "grey";
-    //     itemIdSelector.classList.toggle("selected");
-
-    //     // update the dom
-    //   })
-    // }
-
-
-    // if (itemIdSelector === null) {
-    //   itemIdSelectedSelector.addEventListener('click', e => {
-
-    //     // api call to change the value of item_seleceted
-    //     // axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
-    //     //   // item_selected: false
-    //     // })
-    //     itemIdSelectedSelector.style.backgroundColor = "blue";
-    //     itemIdSelectedSelector.removeAttribute("style")
-    //     itemIdSelectedSelector.classList.toggle("selected")
-    //     // update the dom
-    //   })
-    // }
   })
 }
 

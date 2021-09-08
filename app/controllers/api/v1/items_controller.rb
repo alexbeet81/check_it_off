@@ -23,14 +23,28 @@ end
 
 def update
   authorize @item
+  # @list = @category.list
   @item.toggle_item_selected
 
   # binding.pry
 
-  if @item.update(item_params)
-    redirect_to api_v1_list_path
+  if @item.update!(item_params)
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    puts "SAVED!!!"
+    redirect_to api_v1_item_path(@item)
   else
     render_error
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
+    puts "NOT SAVED!!!"
   end
 end
 
