@@ -16,17 +16,31 @@ const inItShopping = () => {
       itemIdSelector.style.backgroundColor = color
     } else {
       itemIdSelector.style.backgroundColor = "#e0e0e0"
-      itemIdSelector.style.color="#bfbfbf"
+      itemIdSelector.classList.add('selected');
+      fontAwesomeCircleSelector.classList.remove('fa-circle')
+      fontAwesomeCircleSelector.classList.add('fa-check-circle')
     }
 
     itemIdSelector.addEventListener('click', e => {
       // itemIdSelector.style.color = "#bfbfbf"
       // itemIdSelector.style.backgroundColor = "#e0e0e0"
+      axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
+          // item_selected: false
+      })
+      
       itemIdSelector.classList.toggle('selected');
       fontAwesomeCircleSelector.classList.toggle('fa-circle')
       fontAwesomeCircleSelector.classList.toggle('fa-check-circle')
+      toggleBackground(itemIdSelector);
     });
 
+    const toggleBackground = (element) => {
+      if (element.classList.length === 1) {
+        itemIdSelector.style.backgroundColor = color
+      } else {
+        itemIdSelector.style.backgroundColor = "#e0e0e0"
+      }
+    };
     // if (itemIdSelectedSelector === null) {
     //   itemIdSelector.addEventListener('click', e => {
         
