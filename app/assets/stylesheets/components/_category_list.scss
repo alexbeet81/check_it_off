@@ -129,7 +129,12 @@
   .add-item-form {
     position: relative;
     top:-50px;
-    right: -205px;
+    right: -245px;
+    background-color: #f0d366;
+    border: none;
+    border-radius: 4px;
+    color: #346682;
+    
   }
   .form-control {
     position:relative;
@@ -173,4 +178,10 @@
 .margin-container-scroll {
   margin-top: 8px;
   margin-bottom: 16px;
+}
+
+#item_item_name {
+  background: #fff0dc;
+  border: none;
+  width: 327px;
 }
