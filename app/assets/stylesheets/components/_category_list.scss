@@ -134,7 +134,7 @@
     border: none;
     border-radius: 4px;
     color: #346682;
-    
+    margin-top: 2px;
   }
   .form-control {
     position:relative;
@@ -181,7 +181,9 @@
 }
 
 #item_item_name {
-  background: #fff0dc;
+  background: #ffff;
   border: none;
   width: 327px;
+  border: 1px solid #346682;
+  border-radius: 4px;
 }
