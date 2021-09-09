@@ -25,6 +25,7 @@ const inItCreateCategory = () => {
   //     console.log(e.srcElement)
   //   })
   // })
+  
 
   // conditional to stop error when not on list#show page
   if (categoryCards.length > 1) {
@@ -264,7 +265,7 @@ const inItCreateCategory = () => {
             <a data-confirm="Are you quite sure?" class="fas fa-trash" rel="nofollow" data-method="delete" href="/categories/${categoryId}"></a>
           </div>
         </div>
-          <div id="addItem-<%= category.id %>" data-id="<%= category.id %>" class="item-add">
+          <div data-id="<%= category.id %>" class="item-add">
           <p>
             <i class="fas fa-plus"></i>
             add another item
