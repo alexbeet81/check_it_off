@@ -21,7 +21,9 @@ class ListsController < ApplicationController
 
   def shopping
     @list = List.find(params[:list_id])
-    @categories = @list.categories
+
+    # only saves categories that have at least one item.
+    @categories = @list.categories.select {|category| category.items.length > 0 }
   end
 
   def create
