@@ -11,8 +11,9 @@ class ListsController < ApplicationController
   end
 
   def show
-    # TODO: Add category
-    @categories = @list.categories
+    # categories saved into variable and sorted by created at
+    @categories = @list.categories.sort_by(&:created_at)
+
     @category = Category.new
     @item = Item.new
 
