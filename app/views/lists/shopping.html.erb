@@ -1,4 +1,10 @@
-<%= render 'shared/navbar' %>
+<div class="navbar">
+  <%= link_to "", list_path(@list), class:"fas fa-arrow-left" %>
+  <div class="app-name">
+    <p>checkitoff</p>
+  </div>
+  <%= link_to "log out", destroy_user_session_path, method: :delete, class: "btn-small" %>
+</div>
 <br><br><br>
 <div class="shopping-container">
   <% @categories.each do |category| %>
