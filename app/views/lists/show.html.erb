@@ -17,7 +17,7 @@
   <% @list.categories.each do |category| %>
   <div class="category-item" style="background-color:<%= category.category_color %>;">
     <div class="category-title">
-      <h3> <%= category.category_name %> </h3>
+      <h2> <%= category.category_name %> </h2>
     </div>
     <div class="icon-group-cat">
       <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
