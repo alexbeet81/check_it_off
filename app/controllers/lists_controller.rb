@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   def index
     ## display this list with the latest list at the top
     @lists = List.all
+    
 
     ## TODO: Add a new list
     @list = List.new
@@ -11,7 +12,7 @@ class ListsController < ApplicationController
 
   def show
     # TODO: Add category
-
+    @categories = @list.categories
     @category = Category.new
     @item = Item.new
 
