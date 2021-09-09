@@ -17,7 +17,7 @@
   <% @list.categories.each do |category| %>
   <div class="category-item" style="background-color:<%= category.category_color %>;">
     <div class="category-title">
-      <h3> <%= category.category_name %> </h3>
+      <h2> <%= category.category_name %> </h2>
     </div>
     <div class="icon-group-cat">
       <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are you quite sure?" }, class:"fas fa-trash" %>
@@ -38,8 +38,8 @@
     <div class="item-input" style="background-color:<%= category.category_icon %>;">
       <div id="item-wrapper-<%= item.id %>">
           <div class="item-stuff">
-            <i class="far fa-circle"></i>
-            <p> <%= item.item_name %> </p>
+              <i class="far fa-circle"></i>
+              <p> <%= item.item_name %> </p>
             <div data-id="<%= item.id %>" class="icon-group-item">
               <%= link_to "", item_path(item), method: :delete, class:"fas fa-trash" %>
               <a id="edit-item-<%= item.id %>" class="fas fa-pen"></a>
