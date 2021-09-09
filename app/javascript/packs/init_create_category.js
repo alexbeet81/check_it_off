@@ -2,6 +2,8 @@ import axios from 'axios';
 
 const inItCreateCategory = () => {
 
+  
+
   const categoryCards = document.querySelectorAll('.category_card');
 
   const categoryContainer = document.querySelector('.category-container');
@@ -39,8 +41,12 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Meat & Fish', '#d8315b', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      // reload the page
-      location.reload();
+      // reload this page
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[1].addEventListener('click', (e) => {
@@ -51,7 +57,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Fruit & Veg', '#50723c', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[2].addEventListener('click', (e) => {
@@ -62,7 +72,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Snacks', '#f2a540', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[3].addEventListener('click', (e) => {
@@ -72,7 +86,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Soft Drinks', '#8c271e', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[4].addEventListener('click', (e) => {
@@ -82,7 +100,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Beer & Wine', '#eb6c6c', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[5].addEventListener('click', (e) => {
@@ -92,7 +114,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Household', '#07908f', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[6].addEventListener('click', (e) => {
@@ -102,7 +128,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Health', '#485696', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[7].addEventListener('click', (e) => {
@@ -112,7 +142,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Beauty', '#c08497', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[8].addEventListener('click', (e) => {
@@ -122,7 +156,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Bakery', '#f78e69', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[9].addEventListener('click', (e) => {
@@ -132,7 +170,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Deli', '#ffa69e', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[10].addEventListener('click', (e) => {
@@ -142,7 +184,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Frozen', '#9bbdf9', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[11].addEventListener('click', (e) => {
@@ -152,7 +198,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Pet Food', '#7b2d26', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[12].addEventListener('click', (e) => {
@@ -162,7 +212,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Toys', '#e8aa15', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[13].addEventListener('click', (e) => {
@@ -172,7 +226,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Clothes', '#e26d5a', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
 
     categoryCards[14].addEventListener('click', (e) => {
@@ -182,7 +240,11 @@ const inItCreateCategory = () => {
       const div = newCategoryDiv('Stationary', '#f29559', lastIdInt);
       categoryContainer.insertAdjacentHTML("beforeend", div);
 
-      location.reload();
+      setTimeout(function (){
+
+        location.reload();
+      
+      }, 10);
     })
   }
 
