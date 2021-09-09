@@ -13,6 +13,8 @@
       <h1>
         <i class="far fa-star"></i>
         <%= link_to list.name, list_path(list) %>
+        <!-- should we still pull the date forward for the time of creation of a new list -->
+        <span style="font-size: 10px;"> <%= list.created_at%> </span>
       </h1>
     </div>
       <div class="icon-group ">
