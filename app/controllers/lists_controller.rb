@@ -4,14 +4,19 @@ class ListsController < ApplicationController
   def index
     ## display this list with the latest list at the top
     @lists = List.all
+    
 
     ## TODO: Add a new list
     @list = List.new
   end
 
   def show
+    # categories saved into variable and sorted by created at
+    @categories = @list.categories.sort_by(&:created_at)
+
     # TODO: Add category
     @last_id = Category.last.id
+
     @category = Category.new
     @item = Item.new
 
