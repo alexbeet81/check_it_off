@@ -43,7 +43,7 @@ class Api::V1::ListsController < Api::V1::BaseController
     authorize @list
   end
 
-  def list_params    
+  def list_params
     params.require(:list).permit(:name, :user_id)
   end
 
