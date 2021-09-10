@@ -11,7 +11,7 @@ class ListsController < ApplicationController
 
   def show
     # TODO: Add category
-
+    @last_id = Category.last.id
     @category = Category.new
     @item = Item.new
 
