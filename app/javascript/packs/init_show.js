@@ -11,11 +11,6 @@ const inItShow = () => {
     const editItemSelector = document.querySelector(`#edit-item-${id}`)
     const editFormSelector = document.querySelector(`#edit-form-${id}`)
     const itemWrapperSelector = document.querySelector(`#item-wrapper-${id}`)
-    const itemWrapperClassSelector = document.querySelectorAll(".item-wrapper")
-    
-    itemWrapperClassSelector.forEach((e) => {
-      console.log(e.classList)
-    })
     
     editItemSelector.addEventListener('click', (e) => {
       // resets everything
