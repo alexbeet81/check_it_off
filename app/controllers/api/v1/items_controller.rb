@@ -29,22 +29,9 @@ def update
   # binding.pry
 
   if @item.update!(item_params)
-    puts "SAVED!!!"
-    puts "SAVED!!!"
-    puts "SAVED!!!"
-    puts "SAVED!!!"
-    puts "SAVED!!!"
-    puts "SAVED!!!"
-    puts "SAVED!!!"
     redirect_to api_v1_lists_path
   else
     render_error
-    puts "NOT SAVED!!!"
-    puts "NOT SAVED!!!"
-    puts "NOT SAVED!!!"
-    puts "NOT SAVED!!!"
-    puts "NOT SAVED!!!"
-    puts "NOT SAVED!!!"
   end
 end
 
