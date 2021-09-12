@@ -31,7 +31,9 @@ def update
   if @item.update!(item_params)
     # @categoy = Category.find(@item.category_id)
     # @list = List.find(@categoy.list_id)
-    redirect_to api_v1_lists_path
+
+    # render json
+    redirect_to api_v1_list_path
   else
     render_error
   end
