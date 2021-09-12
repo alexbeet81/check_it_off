@@ -15,7 +15,7 @@ def create
   authorize @item
 
   if @item.save
-    redirect_to api_v1_list_path
+    render json: @item.to_json
   else
     render_error
   end
@@ -40,7 +40,7 @@ end
 def destroy
   @item.destroy
 
-  redirect_to api_v1_list_path
+  head :no_content
 end
 
 private
