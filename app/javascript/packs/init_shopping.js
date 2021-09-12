@@ -25,11 +25,7 @@ const inItShopping = () => {
     itemIdSelector.addEventListener('click', e => {
       
       // api call to toggle self.item_selected to true or false
-      // axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
-      //   // item_selected: false
-      // })
-
-      axios.patch(`https://checkitoff-shop.herokuapp.com/api/v1/items/${id}`, {
+      axios.patch(`http://localhost:3000/api/v1/items/${id}`, {
         // item_selected: false
       })
 
