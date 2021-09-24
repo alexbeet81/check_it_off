@@ -279,20 +279,20 @@ const inItCreateCategory = () => {
   };
 
 
-  const apiCall = (name, colorOne, colorTwo, id) => {
-    axios.post(`http://localhost:3000/api/v1/lists/${id}/categories`, {
+  // const apiCall = (name, colorOne, colorTwo, id) => {
+  //   axios.post(`http://localhost:3000/api/v1/lists/${id}/categories`, {
+  //     category_name: name,
+  //     category_color: colorOne,
+  //     category_icon: colorTwo,
+  //     list_id: id
+  //   })
+
+    axios.post(`https://checkitoff-shop.herokuapp.com/api/v1/lists/${id}/categories`, {
       category_name: name,
       category_color: colorOne,
       category_icon: colorTwo,
       list_id: id
     })
-
-    // axios.post(`https://checkitoff-shop.herokuapp.com/api/v1/lists/${id}/categories`, {
-    //   category_name: name,
-    //   category_color: colorOne,
-    //   category_icon: colorTwo,
-    //   list_id: id
-    // })
   };
 };
 
